@@ -1,0 +1,119 @@
+{% extends 'stormboard/layout.html' %}
+{% load i18n %}
+
+{% block body %}
+    <main>
+        <style type="text/css">
+            .login_msg {
+                padding: 40px 0px 20px 0px;
+                width: 100%;
+                font-weight: bold;
+                color: #E32;
+            }
+
+            nav .login {
+                display: none;
+            }
+        </style>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#uname").focus();
+            });
+        </script>
+
+        <aside id="page-header">
+            <div class="row">
+                <h1>Login</h1>
+            </div>
+        </aside>
+
+        <section class="content">
+            <div class="row" style="margin-top:20px;">
+                <div class="col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4">
+                    <div class="well">
+                        <h2>Login to your Stormboard account</h2>
+
+                        <form action="#" method="post">
+                            <input type='hidden' name='CSRFName' value='SB_CSRF_653817800'/><input type='hidden'
+                                                                                                   name='CSRFToken'
+                                                                                                   value='093337be4fe57c9abc3ca6c74b25c652d3cac94b885c2bb72abdfd05edb91a4f63d5898431423d0ecf9f2f974cbfee992ba448220c6d2f20165b0f6e8c242b72'/>
+
+                            <input type="hidden" name="option" value="users"/>
+                            <input type="hidden" name="task" value="login"/>
+
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" size="25" name="txtclsUserUsername" value="" id="uname"
+                                       class="form-control" maxlength="40"/></div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type='password' name="txtclsUserPassword" class="form-control" maxlength="40"/>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary" value="Login">Login</button>
+                            <a href="{% url 'forgot' %}" class="pull-right">Forgot
+                                Password</a><br/>
+                        </form>
+
+                        <div class="goog clearfix" style="margin-top:40px;">
+                            <span class="or" style="background-color:#fff">Or login with...</span>
+                            <hr>
+                            <div class="auth-providers full-width">
+                                <button class="btn auth-google" type="button"
+                                        onclick="window.open('https://accounts.google.com/o/oauth2/auth?client_id=199728975437-gp4joa5arf20dql31cpjucob3dtkpm9e.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DGoogle&amp;response_type=code&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.profile.emails.read+https%3A%2F%2Fwww.google.com%2Fm8%2Ffeeds+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&amp;access_type=offline','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                                    <span class="icon-google"></span> <br>Google
+                                </button>
+                                <button class="btn auth-live" type="button"
+                                        onclick="window.open('https://login.live.com/oauth20_authorize.srf?client_id=000000004014B706&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DLive&amp;response_type=code&amp;scope=wl.basic+wl.contacts_emails+wl.emails+wl.signin+wl.offline_access+wl.skydrive','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                                    <img src="{{ STATIC_URL }}stormboard/images/ms/windows-logo.gif" width="16"> <br>Live
+                                </button>
+                                <button class="btn auth-linkedin" type="button"
+                                        onclick="window.open('https://www.linkedin.com/uas/oauth/authenticate?oauth_token=77--98d7b7b9-c5ba-4469-bcc8-2742fc790a74','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                                    <img src="{{ STATIC_URL }}stormboard/images/apps/linkedin-icon-32.png" width="16">
+                                    <br><span
+                                        class="hidden-xs hidden-sm">LinkedIn</button>
+                                <button class="btn auth-facebook" type="button"
+                                        onclick="window.location='https://www.facebook.com/dialog/oauth?client_id=10150136297165503&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DFacebook&amp;state=a70dfd6032193bd5b827200152ba00fb&amp;sdk=php-sdk-3.2.3&amp;scope=public_profile%2C+user_friends%2C+email&amp;display=page'">
+                                    <img src="{{ STATIC_URL }}stormboard/images/apps/facebook-icon-32.png" width="16">
+                                    <br>Facebook
+                                </button>
+                            </div>
+                        </div>
+                        <div class="visible-xs visible-sm" style="height:50px;"></div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-5 col-lg-4">
+                    <div class="well">
+                        <h2>Sign Up for your Free Account</h2>
+
+                        Stormboard is lets you brainstorm with your team or friends to create and discover better
+                        information.<p><br/>
+
+                        Your account lets you participate in as many brainstorming projects as you'd like. All
+                        completely
+                        free!
+
+                        <p><br/>
+
+                            What are you waiting for? Sign up now!
+
+                        <P><br/>
+
+                            <button type="button" class="btn btn-primary"
+                                    onclick="window.location='{% url 'register' %}'">
+                                Sign
+                                Up
+                            </button>
+                            <br/>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block footer %}{% endblock %}

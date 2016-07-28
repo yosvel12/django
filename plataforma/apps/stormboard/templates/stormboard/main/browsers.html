@@ -1,0 +1,59 @@
+{% extends 'stormboard/layout.html' %}
+{% load i18n %}
+
+{% block body %}
+    <main>
+        <aside id="page-header" class="tall">
+            <div class="row">
+                <h1>Browser Compatibility</h1>
+                <h5>Web browsers and versions that work the best with Stormboard</h5>
+            </div>
+        </aside>
+        <section class="content compat">
+            <div class="row col-md-offset-2 col-md-8 well">
+                <div style="float:left;width:80px;"><span class="icon-chrome browser-icon"></span></div>
+                <div style="float:left;margin-left:25px;">
+                    <h2>Google Chrome</h2>
+                    <a href='http://www.google.com/chrome' target="_blank"
+                       title='Upgrade Here'>http://www.google.com/chrome</a><br/>
+
+                    <p>Recommended Version: Latest Version</p>
+                </div>
+            </div>
+            <div class="row col-md-offset-2 col-md-8 well">
+                <div style="float:left;width:80px;"><span class="icon-safari browser-icon"></span></div>
+                <div style="float:left;margin-left:25px;">
+                    <h2>Apple Safari</h2>
+                    <a href='https://support.apple.com/downloads/safari' target="_blank" title='Upgrade Here'>https://support.apple.com/downloads/safari</a><br/>
+
+                    <p>Recommended Version: >= 6.0</p>
+                </div>
+            </div>
+            <div class="row col-md-offset-2 col-md-8 well">
+                <div style="float:left;width:80px;"><span class="icon-firefox browser-icon"></span></div>
+                <div style="float:left;margin-left:25px;">
+                    <h2>Mozilla Firefox</h2>
+                    <a href='http://www.firefox.com/' target="_blank"
+                       title='Upgrade Here'>http://www.firefox.com</a><br/>
+
+                    <p>Recommended Version: Latest Version</p>
+                </div>
+            </div>
+            <div class="row col-md-offset-2 col-md-8 well">
+                <div style="float:left;width:80px;"><span class="icon-edge browser-icon"></span></div>
+                <div style="float:left;margin-left:25px;">
+                    <h2>Microsoft Internet Explorer or Edge</h2>
+                    <a href='http://www.microsoft.com/windows/internet-explorer/default.aspx' target="_blank"
+                       title='Upgrade Here'>http://www.microsoft.com/windows/internet-explorer/default.aspx</a><br/>
+
+                    <p>Recommended Version: >= 11.0</p>
+
+                    <p>Minimum Version: 10.0</p>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+

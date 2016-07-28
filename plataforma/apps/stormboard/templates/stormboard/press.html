@@ -1,0 +1,480 @@
+{% extends 'stormboard/layout.html' %}
+{% load i18n %}
+
+{% block body %}
+    <main>
+        <style type="text/css">
+            ul.media-list {
+                list-style: none;
+            }
+
+            ul.media-list li {
+                padding-bottom: 50px;
+            }
+
+            .press-features > div .well {
+                height: 200px;
+            }
+
+            .press-screen, .press-image {
+                min-height: 100px;
+            }
+
+            .press-screen img, .press-image img {
+                width: 95%;
+            }
+
+            .press-image {
+                margin-bottom: 5px;
+                line-height: 100px;
+            }
+
+            .steps h4, h3, .jumbotron h4 {
+                font-family: "Tikal Sans Bold";
+            }
+
+            .steps p {
+                padding-left: 24px;
+            }
+
+            .features .well {
+                background: white;
+            }
+
+            .jumbotron p {
+                font-size: 12pt;
+                line-height: 30px;
+            }
+
+            .media.container h4 {
+                border-bottom: 1px solid #eee;
+                margin-bottom: 5px;
+                font-family: "Tikal Sans Bold";
+            }
+
+            .media.container h4 a {
+                font-family: "Tikal Sans";
+                font-size: 10pt;
+            }
+
+            .social {
+                font-size: 18pt;
+                margin: 0px 10px;
+            }
+
+            .signup {
+                margin: 30px 0px 80px;
+            }
+
+            .contact h1, .signup h1 {
+                border-top: 1px solid #f3f3f3;
+                padding: 20px 0px;
+                font-family: "Tikal Sans Bold";
+                text-transform: uppercase
+            }
+
+            .signup input.form-control {
+                border: 2px solid #5eaec9;
+                border-radius: 5px
+            }
+
+            .signup .form-control, .signup button {
+                height: 50px
+            }
+
+            .signup button.google {
+                background: #DE4A31;
+                color: #fff
+            }
+
+            .signup .icon-google {
+                font-size: 18pt;
+                vertical-align: inherit
+            }
+
+            .contact p {
+                text-align: center;
+            }
+        </style>
+        <div class="container">
+            <div class="page-header centered-header col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+                <h1>Stormboard is a free, online brainstorming & collaboration tool</h1>
+                <h5>Thanks for visiting our press page. We would love to have you write about Stormboard, so we've put
+                    together a few tools to help you do that.</h5>
+            </div>
+        </div>
+
+        <div class="jumbotron features">
+            <div class="row">
+                <div class="row col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 press-features">
+                    <h3>STORMBOARD FEATURES</h3>
+
+                    <div class="col-xs-12 col-xm-6 col-md-4 col-lg-4">
+                        <div class="well"><h4>Easy, Fun & Flexible</h4>
+
+                            <p>It takes one minute to learn and 5 to master. It's also perfect for connecting remote
+                                teams.</p></div>
+                    </div>
+                    <div class="col-xs-12 col-xm-6 col-md-4 col-lg-4">
+                        <div class="well"><h4>Access Your Data Anytime</h4>
+
+                            <p>It's useful before, during and after your meetings. You can access your data from
+                                anywhere.</p></div>
+                    </div>
+                    <div class="col-xs-12 col-xm-6 col-md-4 col-lg-4">
+                        <div class="well"><h4>Mobility</h4>
+
+                            <p>It works on whatever device you choose to work with. Laptops, Tablets, Touchsceens or
+                                Mobile
+                                devices.</p></div>
+                    </div>
+                    <div class="col-xs-12 col-xm-6 col-md-4 col-lg-4">
+                        <div class="well"><h4>Reporting</h4>
+
+                            <p>It gives you the ability to output beautiful reports in word, excel, powerpoint and PDF
+                                formats.</p></div>
+                    </div>
+                    <div class="col-xs-12 col-xm-6 col-md-4 col-lg-4">
+                        <div class="well"><h4>Security</h4>
+
+                            <p>Everything in Stormboard is transmitted over a SSL encrypted connection so no one can
+                                intercept your ideas.</p></div>
+                    </div>
+                    <div class="col-xs-12 col-xm-6 col-md-4 col-lg-4">
+                        <div class="well"><h4>Templates</h4>
+
+                            <p>It provides you with a variety of template boards for all different kinds of industries
+                                and
+                                processes.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                <h3>WATCH A QUICK VIDEO ABOUT STORMBOARD</h3>
+
+                <p>
+                    <iframe width="700" height="415" src="#"
+                            frameborder="0" allowfullscreen></iframe>
+                </p>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8 steps">
+                    <h3>STORMBOARD IN 10 EASY STEPS</h3>
+
+                    <h4>1. Create a storm:</h4>
+
+                    <p>Once you've signed into your account simply click the "Create a Storm" button to get started.
+                        Select
+                        a template from the drop down menu on the Create a Storm page. Stormboard offers a wide range of
+                        templates to cater to many different industries and processes. Now you have a storm!</p>
+
+                    <h4>2. Add a sticky note:</h4>
+
+                    <p>Create your first sticky note by selecting "sticky" from the upper lefthand menu, selecting a
+                        color
+                        and typing in the sticky note field. Press enter and drag your sticky note to where you want it
+                        on
+                        the board. The Image and Document sticky notes work the same way, with the added ability to
+                        upload
+                        an image or document. The video sticky will allow you to link a video from Youtube or Vimeo.</p>
+
+                    <h4>3. Create a sketch:</h4>
+
+                    <p>Add a sketch to the storm by selecting the Sketch sticky type. A board for you to sketch on with
+                        your
+                        touchscreen, tablet or mouse will then appear. When you're finished sketching just click "Create
+                        Sketch" and it will be added to your storm.</p>
+
+                    <h4>4. Create a stack:</h4>
+
+                    <p>A stack is like a sub-folder, or sub-storm in this case. Select a Stack sticky note from the menu
+                        and
+                        enter a title for it. Once you've placed it in the storm just click on the stack icon that
+                        appears
+                        on the lower righthand corner of the sticky. This will take you into the stack where you can
+                        enter
+                        more sticky notes, just like in the original storm.</p>
+
+                    <h4>5. Vote:</h4>
+
+                    <p>By now you should have a few sticky notes in your storm, so let's vote on some of them. A sticky
+                        note
+                        that has not received any votes yet will show a zero at the bottom of the sticky. Click on that
+                        zero
+                        and add or remove votes as you see fit. You can pile all your votes on one sticky, or spread
+                        them
+                        around the board.</p>
+
+                    <h4>6. Comment:</h4>
+
+                    <p>Commenting on sticky notes is also useful for team communication. Just click the speech bubble on
+                        the
+                        bottom left hand corner of a sticky to add your comment.</p>
+
+                    <h4>7. Activity:</h4>
+
+                    <p>Want to see what's been happening in your storm recently? Just click the "Activity" button on the
+                        top
+                        right hand corner of your storm to see what sticky notes have been added, voted on and commented
+                        on
+                        in recent history. The storm overview will also show a small dot on any new sticky notes.</p>
+
+                    <h4>8. Reports:</h4>
+
+                    <p>Reporting is a great way to see what's going on in your storm, without having to count votes,
+                        look
+                        for comments or determine which ideas came out on top. You'll find the "Reporting" button in the
+                        menu at the bottom of the screen. Experiment with the different report types to see which ones
+                        are
+                        most appropriate for you.</p>
+
+                    <h4>9. Edit:</h4>
+
+                    <p>It's understandable that you may want to make changes to sticky notes from time to time. Just
+                        click
+                        on the settings wheel on the upper right hand corner of a sticky to edit the text, lock the
+                        sticky
+                        in place, make it a title sticky or stack and copy or move it to another storm. You can also
+                        change
+                        the color of the sticky here.</p>
+
+                    <h4>10. Invite:</h4>
+
+                    <p>Now that you know how to use Stormboard it's time to invite other team members to brainstorm and
+                        collaborate with you. Just click the add button in the Storm Participants area to invite people
+                        into
+                        your storm.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container media">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-5">
+                    <h3>Media For Press Use</h3>
+
+                    <h4>
+                        Screenshots
+                        <a class="pull-right"
+                           href="https://s3.amazonaws.com/stormboard/press/Stormboard-Screenshots.zip"
+                           target="_blank"><span class="glyphicon glyphicon-save"></span> Download as a .zip</a>
+                    </h4>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 press-screen"><a
+                            href="{{ STATIC_URL }}stormboard/images/press/screen-businessmodelcanvas.png"
+                            target="_blank"><img
+                            src="{{ STATIC_URL }}stormboard/images/press/screen-businessmodelcanvas.png"></a></div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 press-screen"><a
+                            href="{{ STATIC_URL }}stormboard/images/press/screen-impacteffort.png" target="_blank"><img
+                            src="{{ STATIC_URL }}stormboard/images/press/screen-impacteffort.png"></a></div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 press-screen"><a
+                            href="{{ STATIC_URL }}stormboard/images/press/screen-swot.png" target="_blank"><img
+                            src="{{ STATIC_URL }}stormboard/images/press/screen-swot.png"></a></div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 press-image"></div>
+                    <div class="clearfix"></div>
+                    <br>
+
+                    <h4>
+                        Logos
+                        <a class="pull-right" href="https://s3.amazonaws.com/stormboard/press/Stormboard-Logos.zip"
+                           target="_blank"><span class="glyphicon glyphicon-save"></span> Download as a .zip</a>
+                    </h4>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 press-image"><a
+                            href="{{ STATIC_URL }}stormboard/images/press/Stormboardlogo-600x300.png" target="_blank"><img
+                            src="{{ STATIC_URL }}stormboard/images/press/Stormboardlogo-600x300.png"></a></div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 press-image"><a
+                            href="{{ STATIC_URL }}stormboard/images/press/Stormboardlogo-600x150.png" target="_blank"><img
+                            src="{{ STATIC_URL }}stormboard/images/press/Stormboardlogo-600x150.png"></a></div>
+                    <div class="clearfix"></div>
+                    <br>
+                    <h4>
+                        Features
+                        <a class="pull-right" href="https://s3.amazonaws.com/stormboard/press/Stormboard-Features.zip"
+                           target="_blank"><span class="glyphicon glyphicon-save"></span> Download as a .zip</a>
+                    </h4>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 press-image"><a
+                            href="{{ STATIC_URL }}stormboard/images/press/StormboardFeatures-Activity.png" target="_blank"><img
+                            src="{{ STATIC_URL }}stormboard/images/press/StormboardFeatures-Activity.png"></a></div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 press-image"><a
+                            href="{{ STATIC_URL }}stormboard/images/press/StormboardFeatures-Comments.png" target="_blank"><img
+                            src="{{ STATIC_URL }}stormboard/images/press/StormboardFeatures-Comments.png"></a></div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 press-image"><a
+                            href="{{ STATIC_URL }}stormboard/images/press/StormboardFeatures-Search.png"
+                            target="_blank"><img
+                            src="{{ STATIC_URL }}stormboard/images/press/StormboardFeatures-Search.png"></a></div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 press-image"><a
+                            href="{{ STATIC_URL }}stormboard/images/press/StormboardFeatures-Voting.png"
+                            target="_blank"><img
+                            src="{{ STATIC_URL }}stormboard/images/press/StormboardFeatures-Voting.png"></a></div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7">
+                    <h3>FAQ</h3>
+
+                    <p>Do you need more detailed information about Stormboard? We have an extensive <a
+                            href="main/help.html"
+                            target="_blank">help
+                        section</a> that you are welcome to browse, and you are always welcome to email us at <a
+                            href="mailto:press@stormboard.com">press@stormboard.com</a></p>
+
+                    <h3>STORMBOARD PRESS</h3>
+
+                    <p class="sb-press">▸ Metro News - <a
+                            href="http://metronews.ca/news/edmonton/995417/alberta-startup-stormboard-looking-to-take-collaboration-tool-to-the-next-level"
+                            target="_blank">Alberta startup Stormboard looking to take collaboration tool to the next
+                        level</a></p>
+
+                    <p class="sb-press">▸ Calgary Herald - <a
+                            href="http://blogs.calgaryherald.com/2014/04/01/startup-of-the-week-stormboard"
+                            target="_blank">Startup
+                        of the Week - Stormboard</a></p>
+
+                    <p class="sb-press">▸ Gigaom Research reviews Stormboard <a
+                            href="http://research.gigaom.com/2014/03/stormboard-gives-me-hope-for-mindmaps-2/?utm_source=dlvr.it&amp;utm_medium=twitter"
+                            target="_blank">as an alternative to mind mapping tools.</a></p>
+
+                    <p class="sb-press">▸ Fringe Education Technology <a
+                            href="http://www.fringeedtech.com/2014/03/theres-stormboard-brewin.html" target="_blank">reviews
+                        Stormboard as a teaching tool.</a></p>
+
+                    <p class="sb-press">▸ brettterpstra.com writes about <a
+                            href="http://brettterpstra.com/2014/03/12/brainstorm-collaboratively-with-stormboard/"
+                            target="_blank">brainstorming collaboratively with Stormboard.</a></p>
+
+                    <p class="sb-press">▸ Richard D. Solomon talks about <a
+                            href="http://richarddsolomonsblog.blogspot.ca/2014/03/how-web-based-collaborative-sticky-like.html"
+                            target="_blank">how Stormboard can be used to promote learning in the blended learning
+                        classroom
+                        including Judaic instruction.</a></p>
+
+                    <p class="sb-press">▸ iLearn Technology presents <a href="http://ilearntechnology.com/?p=5286"
+                                                                        target="_blank">ways Stormboard can be used in
+                        the
+                        classroom.</a></p>
+
+                    <p class="sb-press">▸ EdTechReview write about how <a
+                            href="http://edtechreview.in/news/1062-stormboard-is-making-collaboration-easy-fun-and-flexible"
+                            target="_blank">Stormboard is Making Collaboration Easy, Fun and Flexible</a></p>
+
+                    <p class="sb-press">▸ eLearning.nl presents <a
+                            href="http://www.e-learning.nl/Nieuws/tabid/62/ID/20626/PageID/13876/Versie-2-Stormboard.aspx"
+                            target="_blank">presents Stormboard as an educational technology tool.</a></p>
+
+                    <p class="sb-press">▸ Free Technology for Teachers <a
+                            href="http://www.freetech4teachers.com/2014/03/check-out-education-templates-in.html#.U8lWb6hn_jB"
+                            target="_blank">writes about educational uses for Stormboard.</a></p>
+
+                    <p class="sb-press">▸ Gustavo Martinez writes a <a
+                            href="http://blogs.uab.cat/gmartinez/2014/03/15/stormboard-crea-tableros-digitales-para-el-intercambio-de-ideas/"
+                            target="_blank">Spanish review of Stormboard.</a></p>
+
+                    <p class="sb-press">▸ Doug - Off the Record <a
+                            href="http://dougpete.wordpress.com/2014/03/15/a-brainstorming-tool/" target="_blank">praises
+                        Stormboard as a modern brainstorming tool.</a></p>
+
+                    <p class="sb-press">▸ Cool Business Ideas presents <a
+                            href="http://www.coolbusinessideas.com/archives/stormboard-collaborative-tool/"
+                            target="_blank">Stormboard
+                        as an online brainstorming and collaboration tool.</a></p>
+
+                    <p class="sb-press">▸ clasesdeperiodismo.com reviews <a
+                            href="http://www.clasesdeperiodismo.com/2014/03/23/una-herramienta-que-organiza-la-lluvia-de-ideas/"
+                            target="_blank">Stormboard as a brainstorming tool, in Spanish.</a></p>
+
+                    <p class="sb-press">▸ Best Community Manager presents <a
+                            href="http://elmejorcommunitymanager.wordpress.com/2014/03/24/stomboard-una-herramienta-que-organiza-brainstormings-lluvias-de-ideas/"
+                            target="_blank">10 easy steps for using Stormboard, in Spanish.</a></p>
+
+                    <p class="sb-press">▸ I Love Free Software writes a <a
+                            href="http://www.ilovefreesoftware.com/25/webware/stormboard.html" target="_blank">detailed
+                        review of how Stormboard works and what it might be used for.</a></p>
+
+                    <p class="sb-press">▸ Superdownloads <a
+                            href="http://www.superdownloads.com.br/download/159/stormboard/?utm_medium=twitter&amp;utm_source=twitterfeed"
+                            target="_blank">reviews Stormboard, in Spanish.</a></p>
+
+                    <p class="sb-press">▸ Blog de Ciencia de la Informacion <a
+                            href="http://blog.pucp.edu.pe/item/186004/aplicaciones-que-brindan-soluciones"
+                            target="_blank">writes
+                        about Stormboard as a tool in information sciences.</a></p>
+
+                    <p class="sb-press">▸ Mashable includes Stormboard in their list of <a
+                            href="http://mashable.com/2013/09/25/mind-mapping-tools/" target="_blank">recommended
+                        brainstorming and mind mapping tools</a></p>
+
+                    <p class="sb-press">▸ Creative Bloq mentions Stormboard as a tool that helps teams <a
+                            href="http://www.creativebloq.com/web-design/mind-mapping-tools-9134523" target="_blank">collaborate
+                        and brainstorm.</a></p>
+
+                    <p class="sb-press">▸ Stormboard was named <a
+                            href="http://thenextweb.com/insider/2013/03/07/as-launch-heads-to-a-close-here-are-some-of-the-best-companies-that-pitched-on-its-third-day/#!xCHBp"
+                            target="_blank">one of the best companies to watch from the 2013 LAUNCH Festival by The Next
+                        Web. collaborate and brainstorm.</a></p>
+
+                    <h3>TRY STORMBOARD</h3>
+
+                    <p>If you haven't had a chance to explore Stormboard yet we are extending an invitation to an
+                        advanced
+                        preview of all the new features before they go live. Just follow the link below to sign up and
+                        gain
+                        access.</p>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="signup">
+                    <h1 class="text-center">Sign Up Now!</h1>
+                    <br>
+
+                    <div class="col-sm-offset-1 col-md-offset-2 col-sm-5 col-md-5 col-lg-5">
+                        <span class="label label-danger email-signup-error"></span>
+                        <input type="hidden" class="email-signup-k" value="k4usld8l6l"/>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control email-signup" placeholder="Email Address">
+        <span class="input-group-btn">
+          <button class="btn btn-primary btn-email-signup" type="button">Sign Up</button>
+        </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-md-3">
+                        <button class="btn google" type="button"
+                                onclick="window.open('main/oauthb3d7.html?provider=googlesignin&amp;login','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                            <span class="icon-google"></span> Sign in with Google
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="contact">
+                    <h1 class="text-center">Contact Us</h1>
+
+                    <p>
+                        <a href="https://www.facebook.com/stormboard" target="_blank" class="social"><span
+                                class="icon-facebook"></span></a>
+                        <a href="https://plus.google.com/109179707202982741261" target="_blank" class="social"><span
+                                class="icon-google-plus"></span></a>
+                        <a href="https://twitter.com/stormboard" target="_blank" class="social"><span
+                                class="icon-twitter"></span></a>
+                        <a href="http://blog.stormboard.com/" target="_blank" class="social"><span
+                                class="icon-blogger"></span></a>
+                    </p>
+
+                    <p>For any press inquires or questions please contact:</p>
+
+                    <p>Email: <a href="mailto:press@stormboard.com">press@stormboard.com</a></p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}
+
+{% block footer %}{% endblock %}

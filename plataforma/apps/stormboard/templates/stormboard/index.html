@@ -1,0 +1,413 @@
+{% extends 'stormboard/layout.html' %}
+{% load i18n %}
+
+{% block javascripts %} {% endblock %}
+
+{% block header %} {% endblock %}
+
+{% block menu %} {% endblock %}
+
+{% block body %}
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header pull-left">
+                <a class="navbar-brand logo" href="/"><img src="{{ STATIC_URL }}stormboard/images/logo-thin%402x.png"
+                                                           alt="Stormboard"/></a>
+            </div>
+
+            <div class="login">
+                <button type="button" class="btn btn-primary btn-login pull-right" onclick="dologin();">Login</button>
+                <button type="button" class="btn btn-primary btn-signup pull-right" onclick="dosignup();">Sign Up
+                </button>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li class=''><a href='{% url 'stormboard:tour' %}'>Tour</a></li>
+                    <li class=''><a href='#' target='_newtab'>Blog</a></li>
+                    <li class=''><a href='{% url 'stormboard:pricing' %}'>Plans & Pricing</a></li>
+                    <li class='dropdown'><a href='{% url 'stormboard:help' %}' class="dropdown-toggle"
+                                            data-toggle="dropdown">Help</a>
+                        <ul class="dropdown-menu">
+                            <li><a href='{% url 'stormboard:help' %}'>Help</a></li>
+                            <li><a href='{% url 'stormboard:browsers' %}'>Browser Compatibility</a></li>
+                            <li class='divider'></li>
+                            <li><a href='{% url 'stormboard:privacy' %}'>Privacy Policy</a></li>
+                            <li><a href='{% url 'stormboard:tos' %}'>Terms of Service</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="full-container">
+        <script>
+            window.twttr = (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                if (d.getElementById(id)) return t;
+                js = d.createElement(s);
+                js.id = id;
+                js.onload = function () {
+                    $(".twitter-feed").removeClass("hide");
+                }
+                js.src = "{{ STATIC_URL }}js/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+
+                t._e = [];
+                t.ready = function (f) {
+                    t._e.push(f);
+                };
+
+                return t;
+            }(document, "script", "twitter-wjs"));
+        </script>
+        <div class="jumbotron splash">
+            <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 sb-tagline">
+                    <h1>Online Brainstorming & Collaboration</h1>
+                </div>
+                <div class="col-sm-10 col-md-8 col-lg-8 hidden-xs sb-subtagline">
+                    <h4>Brainstorm, organize, prioritize and act on the best ideas, in the same room or around the
+                        world, on
+                        a realtime sticky note whiteboard.</h4>
+                </div>
+                <div class="frm-signup">
+                    <div class="col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                        <span class="label label-danger email-signup-error"></span>
+                        <input type="hidden" class="email-signup-k" value="k4usld8l6l"/>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control email-signup" placeholder="Email Address">
+            <span class="input-group-btn">
+              <button class="btn btn-success btn-email-signup" type="button">Sign Up</button>
+            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8 auth-providers">
+                        <h5>Or sign up with...</h5>
+                        <button class="btn auth-google" type="button"
+                                onclick="window.open('https://accounts.google.com/o/oauth2/auth?client_id=199728975437-gp4joa5arf20dql31cpjucob3dtkpm9e.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DGoogle&amp;response_type=code&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.profile.emails.read+https%3A%2F%2Fwww.google.com%2Fm8%2Ffeeds+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&amp;access_type=offline','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                            <span class="icon-google"></span> <span class="visible-md visible-lg">Google</span></button>
+                        <button class="btn auth-live" type="button"
+                                onclick="window.open('https://login.live.com/oauth20_authorize.srf?client_id=000000004014B706&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DLive&amp;response_type=code&amp;scope=wl.basic+wl.contacts_emails+wl.emails+wl.signin+wl.offline_access+wl.skydrive','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                            <img src="{{ STATIC_URL }}stormboard/images/ms/windows-logo.gif" width="16"> <span
+                                class="hidden-xs hidden-sm">Live</span></button>
+                        <button class="btn auth-linkedin" type="button"
+                                onclick="window.open('https://www.linkedin.com/uas/oauth/authenticate?oauth_token=77--a45146d0-6688-4b3c-aa4d-06ce3460995c','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                            <img src="{{ STATIC_URL }}stormboard/images/apps/linkedin-icon-32.png" width="16"> <span
+                                class="hidden-xs hidden-sm">LinkedIn</span></button>
+                        <button class="btn auth-facebook" type="button"
+                                onclick="window.location='https://www.facebook.com/dialog/oauth?client_id=10150136297165503&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DFacebook&amp;state=ae719c872fa70ef521a25c47644f4b32&amp;sdk=php-sdk-3.2.3&amp;scope=public_profile%2C+user_friends%2C+email&amp;display=page'">
+                            <img src="{{ STATIC_URL }}stormboard/images/apps/facebook-icon-32.png" width="16"> <span
+                                class="hidden-xs hidden-sm">Facebook</span></button>
+                    </div>
+                </div>
+                <img src="{{ STATIC_URL }}stormboard/images/splash/devices.png" class="devices">
+                <img src="{{ STATIC_URL }}stormboard/images/splash/play.png" class="video-play" style="display:none;">
+                <img src="{{ STATIC_URL }}stormboard/images/splash/video-overlay.png" class="video-overlay">
+            </div>
+        </div>
+        <div class="dg-youtube"></div>
+
+        <script>
+            $(function () {
+                $("img.devices").on("mouseover", function () {
+                    $("img.video-play").css("display", "none");
+                    if ($(".video-overlay").not(":visible")) {
+                        $(".video-overlay").css({
+                            "left": $(this).position().left,
+                            "top": $(this).position().top + "px",
+                            "height": $(this).height() + "px"
+                        }).fadeIn(100);
+                    }
+                });
+                $("img.video-overlay").on("mouseout", function () {
+                    $(this).fadeOut(200, function () {
+                        setPlayButton();
+                    });
+                }).click(function () {
+                    $(".dg-youtube").html('<iframe width="100%" height="415" src="https://www.youtube.com/embed/XvVeKpZ-abo?autoplay=1&wmode=opaque" frameborder="0" allowfullscreen></iframe>').dialog({
+                        width: 700,
+                        height: 500,
+                        modal: true,
+                        title: "Stormboard in 60 seconds",
+                        close: function () {
+                            $(".dg-youtube").html("");
+                            $(".dg-youtube").parents(".ui-dialog:first").remove();
+                        }
+                    });
+                });
+
+                var setPlayButton = function () {
+                    var $devices = $("img.devices"), $play = $("img.video-play");
+                    $play.css({"display": "block", "top": ($devices.position().top + ($devices.height() / 2)) + "px"});
+                };
+
+                var testpage = 0;
+                var testimonials = $(".testimonial", ".testimonials").length;
+                var testvisible = 3;
+                var testTimeout = false;
+
+                function setVisible() {
+                    var w = $(".testimonials > .container").width();
+                    if (w < 720) {
+                        testvisible = 1;
+                    } else if (w <= 768) {
+                        testvisible = 2;
+                    } else {
+                        testvisible = 3;
+                    }
+                }
+
+                function setTestPage(pg) {
+
+                    setVisible();
+                    if (pg * testvisible > testimonials) {
+                        testpage = 0;
+                        pg = 0;
+                    }
+
+                    $("li", ".testimonial-pager").removeClass("active");
+                    $("li[page=" + pg + "]", ".testimonial-pager").addClass("active");
+
+                    $(".testimonial").fadeOut(200);
+                    setTimeout(function () {
+                        $(".testimonial").each(function (i) {
+                            if (i >= pg * testvisible && i < ((pg + 1) * testvisible)) {
+                                $(this).fadeIn(200);
+                            }
+                        });
+                    }, 300);
+
+                    if (testTimeout) {
+                        clearTimeout(testTimeout);
+                    }
+                    testTimeout = setTimeout(function () {
+                        setTestPage(++testpage);
+                    }, 16000);
+                }
+
+                var resizeTimeout = false;
+                $(window).on("resize", function () {
+
+                    if (testTimeout) {
+                        clearTimeout(testTimeout);
+                    }
+                    setVisible();
+                    testpage = 0;
+                    var pages = Math.ceil(testimonials / testvisible);
+                    var pghtml = "";
+                    for (var p = 0; p < pages; p++) {
+                        pghtml += "<li page='" + p + "' " + (p == 0 ? "class='active'" : "") + "><div></div></li>";
+                    }
+                    $(".testimonial-pager").css("width", pages * 30).html(pghtml);
+                    $("li", ".testimonial-pager").click(function () {
+                        if (testTimeout) {
+                            clearTimeout(testTimeout);
+                        }
+                        testpage = $(this).attr("page");
+                        setTestPage(testpage);
+                    });
+                    $(".testimonial, .video-play").css("display", "none");
+                    if (resizeTimeout) {
+                        clearTimeout(resizeTimeout);
+                    }
+                    resizeTimeout = setTimeout(function () {
+                        setTestPage(testpage);
+                        setPlayButton();
+                    }, 200);
+
+                }).trigger("resize");
+                setTestPage(testpage);
+            });
+        </script>
+        <div class="testimonials">
+            <div class="container">
+                <div class="testimonial col-xs-12 col-sm-6 col-md-4 col-lg-4"><img
+                        src="{{ STATIC_URL }}stormboard/images/splash/quote.png" class="t-picture">
+
+                    <div class="t-comments">Stormboard saved us $80,000 and made our international meeting more engaged,
+                        effective and actionable.
+                    </div>
+                    <span class="t-name">- Robert E. Joyce Jr., CEO<br>Norican Group</span></div>
+                <div class="testimonial col-xs-12 col-sm-6 col-md-4 col-lg-4"><img
+                        src="{{ STATIC_URL }}stormboard/images/splash/quote.png" class="t-picture">
+
+                    <div class="t-comments">My CoFounder and I are using Stormboard to map out EVERYTHING for our
+                        company
+                        MusicBox (www.strikingly.com/musicbox) @TeamMusicbox. <br><br>We love it. So simple to use, so
+                        clean, super interactive. We tried a number of platforms before finding yours, and nothing comes
+                        close to Stormboard.
+                    </div>
+                    <span class="t-name">- Michael Hoy<br>Director of Partner Relations</span></div>
+                <div class="testimonial col-xs-12 col-sm-6 col-md-4 col-lg-4"><img
+                        src="{{ STATIC_URL }}stormboard/images/splash/quote.png" class="t-picture">
+
+                    <div class="t-comments">We did a strategic workshop with various stakeholders to achieve a shared
+                        understanding of the business objective and challenges. With 12 people distributed in 3
+                        locations
+                        (New York, San Francisco and London) there was no way we could’ve done the workshop effectively
+                        without Stormboard. In addition to the great intuitive tool that requires almost no learning,
+                        Stormboard provides a superb customer service that went above and beyond to support our
+                        workshop.
+                    </div>
+                    <span class="t-name">- Carl, Managing Director<br>Jumpshift</span></div>
+                <div class="testimonial col-xs-12 col-sm-6 col-md-4 col-lg-4"><img
+                        src="{{ STATIC_URL }}stormboard/images/splash/quote.png" class="t-picture">
+
+                    <div class="t-comments">We used Stormboard to help run engaging collaborative workshops with
+                        participants in Brasil, China, Chicago, California, Australia and New Zealand. We had more
+                        engagement than we often get in physical workshops and the performance of the system was
+                        flawless. A
+                        great product that has taken virtual collaboration to another level.
+                    </div>
+                    <span class="t-name">- Danny, Senior User Experience Designer <br>TheEconomist.com</span></div>
+                <div class="testimonial col-xs-12 col-sm-6 col-md-4 col-lg-4"><img
+                        src="{{ STATIC_URL }}stormboard/images/splash/quote.png" class="t-picture">
+
+                    <div class="t-comments">Stormboard is a fantastic business tool. I have used it a number of times
+                        for
+                        our yearly planning meetings and it works like a charm to ensure that we are focused during our
+                        meetings, and aligned on plans to move forward. Because of the online access we are able to use
+                        our
+                        precious face to face meeting time to dive deep into business insights and brainstorm/greenhouse
+                        ideas. I would definitely recommend Stormboard to others.
+                    </div>
+                    <span class="t-name">- Sarah Manuel, Regional Business Manager - major consumer goods company</span>
+                </div>
+                <div class="testimonial col-xs-12 col-sm-6 col-md-4 col-lg-4"><img
+                        src="{{ STATIC_URL }}stormboard/images/splash/quote.png" class="t-picture">
+
+                    <div class="t-comments">Our company was looking for a tool that was able to collaborate and organize
+                        our
+                        team’s ideas and concepts digitally. When we found Stormboard we knew it was the perfect tool
+                        for
+                        our marketing firm. It has made brainstorming efficient and green. The Stormboard team has been
+                        extremely helpful and very open to suggestions. We highly recommend Stormboard.
+                    </div>
+                    <span class="t-name">- Danikka, Culinary Marketing Coordinator</span></div>
+            </div>
+            <ul class="testimonial-pager"></ul>
+        </div>
+        <div class="workson">
+            <div class="container">
+                <div class="col-xs-12">
+                    <h2>Stormboard works in real-time on all your devices from 4" to 84"</h2>
+
+                    <div class="row wo-list">
+                        <div class="col-xs-4 col-sm-2">
+                            <div class="platform-icon">
+                                <span class="icon-apple"></span>
+                            </div>
+                            <span class="icon-phone-iphone device-icon"></span>
+                            <span class="type">iPhone</span>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <div class="platform-icon">
+                                <span class="icon-android"></span>
+                            </div>
+                            <span class="icon-phone-android device-icon"></span>
+                            <span class="type">Android</span>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <div class="platform-icon">
+                                <span class="icon-apple"></span>
+                            </div>
+                            <span class="icon-tablet-mac device-icon"></span>
+                            <span class="type">iPad</span>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <div class="platform-icon">
+                                <span class="icon-android"></span>
+                            </div>
+                            <span class="icon-tablet-android device-icon"></span>
+                            <span class="type">Android</span>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <div class="platform-icon">
+                                <span class="icon-apple"></span>
+                                <span class="icon-windows8"></span>
+                            </div>
+                            <span class="icon-computer device-icon"></span>
+                            <span class="type">Desktop / Laptop</span>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <div class="platform-icon for-surfacehub">
+                                <span class="icon-windows8"></span>
+                            </div>
+                            <span class="icon-surfacehub device-icon"></span>
+                            <span class="type">Microsoft<br>Surface Hub</span>
+                        </div>
+                    </div>
+
+                    <h2>Use any modern web browser</h2>
+
+                    <div class="row wo-list">
+                        <div class="col-xs-4 col-sm-offset-1 col-sm-2">
+                            <span class="icon-chrome browser-icon"></span>
+                            <span class="type">Chrome</span>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <span class="icon-safari browser-icon"></span>
+                            <span class="type">Safari</span>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <span class="icon-firefox browser-icon"></span>
+                            <span class="type">Firefox</span>
+                        </div>
+                        <div class="col-xs-6 col-sm-2">
+                            <span class="icon-edge browser-icon"></span>
+                            <span class="type">Edge</span>
+                        </div>
+                        <div class="col-xs-6 col-sm-2">
+                            <span class="icon-IE browser-icon"></span>
+                            <span class="type">Inernet Explorer 10/11</span>
+                        </div>
+                    </div>
+
+                    <h2>Apps for iOS and Android for both tablets and phones</h2>
+
+                    <p class="text-center">Stormboard for your phone gives you an easy way to add ideas on the go. Turn
+                        your
+                        phone sideways to get the spatial view. <a href="{% url 'stormboard:tour' %}#mobile">More
+                            Information</a></p>
+
+                    <p class="app-store-links">
+                        <a href="https://itunes.apple.com/us/app/stormboard/id1029518273?ls=1&amp;mt=8" target="_blank"><img
+                                src="{{ STATIC_URL }}stormboard/images/apple/appstore.svg"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.stormboard.mobile"
+                           target="_blank"><img
+                                src="{{ STATIC_URL }}stormboard/images/google/play.png"></a>
+                    </p>
+
+                    <h2>Stormboard for Windows 10</h2>
+
+                    <p class="text-center">Stormboard for Windows is a desktop application so you can always have easy
+                        access to Stormboard.</p>
+
+                    <p class="app-store-links">
+                        <a href="https://www.microsoft.com/store/apps/9nblggh64756" target="_blank"><img
+                                src="{{ STATIC_URL }}stormboard/images/ms/store.svg"></a>
+                    </p>
+
+                    <h2>Stormboard for Surface Hub</h2>
+
+                    <p class="text-center">Stormboard has a specific version available only on the Microsoft Surface Hub
+                        Store that takes advantage of the beautiful 55" and 84" touchscreens and fantastic pen input. <a
+                                href="{% url 'stormboard:tour' %}#surfacehub">More Information</a></p>
+
+                    <p class="app-store-links">
+                        <a href="https://www.microsoft.com/store/apps/9nblggh64756" target="_blank"><img
+                                src="{{ STATIC_URL }}stormboard/images/ms/store.svg"></a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container site-container"></div>
+{% endblock %}
+
+

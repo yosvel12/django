@@ -1,0 +1,183 @@
+{% extends 'base_site.html' %}
+{% load i18n %}
+
+{% block head_title %}
+    StormBoard
+{% endblock %}
+
+{% block extra_head %}
+    <meta charset="utf-8"/>
+    <meta charset="utf-8">
+    <meta name="description" content="Realtime Brainstorming and Collaboration"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}stormboard/images/favicon.ico"/>
+
+    <link rel="apple-touch-icon-precomposed"
+          href="{{ STATIC_URL }}stormboard/images/apple/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="{{ STATIC_URL }}stormboard/images/apple/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="{{ STATIC_URL }}stormboard/images/apple/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="{{ STATIC_URL }}stormboard/images/apple/apple-touch-icon-144x144-precomposed.png">
+
+    <meta name="application-name" content="Stormboard"/>
+
+    <meta name="application-starturl" content="/stormboard"/>
+
+    <meta name="msapplication-tooltip" content="Stormboard"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF"/>
+    <meta name="msapplication-TileImage" content="{{ STATIC_URL }}stormboard/images/ms/touch-icon-144x144.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% endblock %}
+
+{% block stylesheetsHeader %}
+    <link href="{{ STATIC_URL }}stormboard/css/site.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}stormboard/css/storm.css" rel="stylesheet">
+    <link rel='stylesheet' href='{{ STATIC_URL }}stormboard/css/pages/main.index.css'
+          type='text/css'/>
+    <link rel='stylesheet' href='{{ STATIC_URL }}stormboard/css/pages/register.css' type='text/css'/>
+{% endblock %}
+
+{% block javascriptsHeader %}
+    <script type='text/javascript' src='{{ STATIC_URL }}js/vendor_jquery_1x_combined.min.js'></script>
+    <script type='text/javascript' src='{{ STATIC_URL }}stormboard/js/stormboard.min.js'></script>
+    <script type='text/javascript' src='{{ STATIC_URL }}js/bootstrap.js'></script>
+    <script type='text/javascript' src='{{ STATIC_URL }}js/modernizr.js'></script>
+    <script type='text/javascript' src='{{ STATIC_URL }}js/moment.js'></script>
+    <script type='text/javascript' src='{{ STATIC_URL }}stormboard/js/public.min.js'></script>
+    <script type='text/javascript' src='{{ STATIC_URL }}js/users/users.js'></script>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(function () {
+            Stormboard.App.Init();
+        })
+    </script>
+{% endblock %}
+
+{% block header %}
+    <nav>
+        <div class="pull-left">
+            <div class="btn" id="hamburger">
+                <span class="icon-dehaze"></span>
+            </div>
+            <a class="navbar-brand logo" href="/"><img src="{{ STATIC_URL }}stormboard/images/logo-thin%402x.png"
+                                                       alt="Stormboard"/></a>
+        </div>
+        <div class="login">
+            <a href="{% url 'login' %}" class="btn btn-success">Login</a>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block menu %}
+    <aside id="app-menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{% url 'stormboard:about' %}">About Stormboard</a></li>
+            <li><a href="{% url 'stormboard:help' %}">Help</a></li>
+            <li><a href="{% url 'stormboard:pricing' %}">Plans & Pricing</a></li>
+            <li><a href="#" target="_blank">Blog</a></li>
+            <li><a href="{% url 'stormboard:contact' %}">Contact Us</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">API</a></li>
+            <li><a href="{% url 'stormboard:press' %}">Press</a></li>
+            <li><a href="{% url 'stormboard:browsers' %}">Browser Compatibility</a></li>
+            <li><a href="{% url 'stormboard:privacy' %}">Privacy Policy</a></li>
+            <li><a href="{% url 'stormboard:tos' %}">Terms of Service</a></li>
+        </ul>
+    </aside>
+{% endblock %}
+
+{% block singUp %}
+    <div id="dg_register" class="frm-signup">
+        <div class="quick-signup">
+            <span class="label label-danger email-signup-error"></span>
+            <input type="hidden" class="email-signup-k" value="k4usld8l6l"/>
+
+            <div class="input-group">
+                <input type="text" class="form-control email-signup" placeholder="Email Address">
+      <span class="input-group-btn">
+        <button class="btn btn-primary btn-email-signup" type="button">Sign Up</button>
+      </span>
+            </div>
+        </div>
+        <div class="goog">
+            <span class="or">Or sign up with...</span>
+            <hr>
+            <div class="auth-providers full-width">
+                <button class="btn auth-google" type="button"
+                        onclick="window.open('https://accounts.google.com/o/oauth2/auth?client_id=199728975437-gp4joa5arf20dql31cpjucob3dtkpm9e.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DGoogle&amp;response_type=code&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.profile.emails.read+https%3A%2F%2Fwww.google.com%2Fm8%2Ffeeds+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&amp;access_type=offline','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                    <span class="icon-google"></span> <span class="visible-md visible-lg">Google</span></button>
+                <button class="btn auth-live" type="button"
+                        onclick="window.open('https://login.live.com/oauth20_authorize.srf?client_id=000000004014B706&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DLive&amp;response_type=code&amp;scope=wl.basic+wl.contacts_emails+wl.emails+wl.signin+wl.offline_access+wl.skydrive','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                    <img src="{{ STATIC_URL }}stormboard/images/ms/windows-logo.gif" width="16"> <span
+                        class="hidden-xs hidden-sm">Live</span></button>
+                <button class="btn auth-linkedin" type="button"
+                        onclick="window.open('https://www.linkedin.com/uas/oauth/authenticate?oauth_token=77--a0e471ff-25ff-424e-87ce-cf3d88d48c1b','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                    <img src="{{ STATIC_URL }}stormboard/images/apps/linkedin-icon-32.png" width="16"> <span
+                        class="hidden-xs hidden-sm">LinkedIn</span></button>
+                <button class="btn auth-facebook" type="button"
+                        onclick="window.location='https://www.facebook.com/dialog/oauth?client_id=10150136297165503&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DFacebook&amp;state=49ea5c0b8742d90e63bfc9b2af01f1a8&amp;sdk=php-sdk-3.2.3&amp;scope=public_profile%2C+user_friends%2C+email&amp;display=page'">
+                    <img src="{{ STATIC_URL }}stormboard/images/apps/facebook-icon-32.png" width="16"> <span
+                        class="hidden-xs hidden-sm">Facebook</span></button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>About Us</h3>
+
+                    <p>Stormboard is an online brainstorming and collaboration platform. The name comes from a
+                        combination
+                        of brainstorm and whiteboard.</p>
+                </div>
+                <div class="col-md-5">
+                    <h3>Site</h3>
+
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li><a href="{% url 'stormboard:about' %}">About Stormboard</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="{% url 'stormboard:help' %}">Help</a></li>
+                            <li><a href="{% url 'stormboard:contact' %}">Contact Us</a></li>
+                            <li><a href="{% url 'stormboard:pricing' %}">Plans & Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">API</a></li>
+                            <li><a href="{% url 'stormboard:press' %}">Press</a></li>
+                            <li><a href="{% url 'stormboard:browsers' %}">Browser Compatibility</a></li>
+                            <li><a href="{% url 'stormboard:privacy' %}">Privacy Policy</a></li>
+                            <li><a href="{% url 'stormboard:tos' %}">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3>Follow Us!</h3>
+                    <a href="https://www.facebook.com/stormboard" target="_blank" class="social"><span
+                            class="icon-facebook"></span></a>
+                    <a href="https://plus.google.com/109179707202982741261" target="_blank" class="social"><span
+                            class="icon-google-plus"></span></a>
+                    <a href="https://twitter.com/stormboard" target="_blank" class="social"><span
+                            class="icon-twitter"></span></a>
+                    <a href="http://blog.stormboard.com/" target="_blank" class="social"><span
+                            class="icon-blogger"></span></a>
+
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,1136 @@
+{% extends 'stormboard/layout.html' %}
+{% load i18n %}
+
+{% block stylesheets %}
+    <link rel='stylesheet' href='{{ STATIC_URL }}stormboard/css/pages/main.help.css' type='text/css'/>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(function () {
+            Stormboard.App.Init();
+        })
+    </script>
+
+    <script type='text/javascript' src='{{ STATIC_URL }}stormboard/js/main.help.min.js'></script>
+    <script type='text/javascript' src='{{ STATIC_URL }}js/jquery.highlight.js'></script>
+{% endblock %}
+
+{% block body %}
+    <main>
+        <aside id="page-header">
+            <div class="row">
+                <h1>
+                    Help
+                    <div id="google_translate_element"></div>
+                    <script type="text/javascript">
+                        function googleTranslateElementInit() {
+                            new google.translate.TranslateElement({
+                                pageLanguage: 'en',
+                                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                            }, 'google_translate_element');
+                        }
+                    </script>
+                    <script type="text/javascript"
+                            src="#"></script>
+                </h1>
+            </div>
+        </aside>
+        <section class="content fixed-width">
+            <div id="help-categories" class="fixed-left">
+                <ul class="nav help-nav">
+                    <li><a href="#Getting_Started"><i class="icon-chevron-right"></i> <span class='category_name'>Getting Started</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help54'><i class="icon-question-sign"></i> Create a
+                                Storm</a></li>
+                            <li class='help-question'><a href='#help55'><i class="icon-question-sign"></i> Add
+                                Content</a>
+                            </li>
+                            <li class='help-question'><a href='#help56'><i class="icon-question-sign"></i>
+                                <span>Invite</span> People</a></li>
+                            <li class='help-question'><a href='#help69'><i class="icon-question-sign"></i> Choosing a
+                                Template</a></li>
+                            <li class='help-question'><a href='#help83'><i class="icon-question-sign"></i> How can I
+                                tell
+                                who I've invited to a storm?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Account"><i class="icon-chevron-right"></i> <span class='category_name'>Account</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help13'><i class="icon-question-sign"></i> How do I
+                                reset my
+                                password?</a></li>
+                            <li class='help-question'><a href='#help36'><i class="icon-question-sign"></i> How do I
+                                upgrade,
+                                cancel or downgrade my subscription?</a></li>
+                            <li class='help-question'><a href='#help40'><i class="icon-question-sign"></i> Where do I
+                                find
+                                my account information?</a></li>
+                            <li class='help-question'><a href='#help59'><i class="icon-question-sign"></i> How do I
+                                close my
+                                account?</a></li>
+                            <li class='help-question'><a href='#help71'><i class="icon-question-sign"></i> Can I be
+                                involved
+                                in a storm without setting up an account?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Comments"><i class="icon-chevron-right"></i> <span
+                            class='category_name'>Comments</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help42'><i class="icon-question-sign"></i> How do I
+                                comment?</a>
+                            </li>
+                            <li class='help-question'><a href='#help43'><i class="icon-question-sign"></i> Can I delete
+                                or
+                                edit a comment?</a></li>
+                            <li class='help-question'><a href='#help44'><i class="icon-question-sign"></i> How do I
+                                leave
+                                general comments about the Storm?</a></li>
+                            <li class='help-question'><a href='#help45'><i class="icon-question-sign"></i> How do I know
+                                if
+                                there are new comments?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Legend"><i class="icon-chevron-right"></i> <span
+                            class='category_name'>Legend</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help34'><i class="icon-question-sign"></i> How do I edit
+                                the
+                                Legend? </a></li>
+                            <li class='help-question'><a href='#help90'><i class="icon-question-sign"></i> How do I
+                                minimize/maximize the legend?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Mobile_and_Tablets"><i class="icon-chevron-right"></i> <span class='category_name'>Mobile and Tablets</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help9'><i class="icon-question-sign"></i> Is there an
+                                iPhone, Android Phone or Windows Phone App?</a></li>
+                            <li class='help-question'><a href='#help49'><i class="icon-question-sign"></i> Is there an
+                                iPad
+                                App?</a></li>
+                            <li class='help-question'><a href='#help50'><i class="icon-question-sign"></i> Does
+                                Stormboard
+                                work on my tablet?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Navigation"><i class="icon-chevron-right"></i> <span
+                            class='category_name'>Navigation</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help29'><i class="icon-question-sign"></i> How do I move
+                                around a Storm? </a></li>
+                            <li class='help-question'><a href='#help32'><i class="icon-question-sign"></i> How do I zoom
+                                in
+                                or out of a Storm? </a></li>
+                            <li class='help-question'><a href='#help52'><i class="icon-question-sign"></i> How can I
+                                navigate to other recently viewed Storms? </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Privacy"><i class="icon-chevron-right"></i> <span class='category_name'>Privacy</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help41'><i class="icon-question-sign"></i> Who can see
+                                my
+                                Storms?</a></li>
+                            <li class='help-question'><a href='#help57'><i class="icon-question-sign"></i> Can
+                                Stormboard
+                                see my Storms?</a></li>
+                            <li class='help-question'><a href='#help58'><i class="icon-question-sign"></i> Are my ideas
+                                transmitted securely?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Reports"><i class="icon-chevron-right"></i> <span class='category_name'>Reports</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help25'><i class="icon-question-sign"></i> How do I make
+                                reports? </a></li>
+                            <li class='help-question'><a href='#help27'><i class="icon-question-sign"></i> Can I make
+                                custom
+                                reports? </a></li>
+                            <li class='help-question'><a href='#help81'><i class="icon-question-sign"></i> Who can
+                                create
+                                reports?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Search"><i class="icon-chevron-right"></i> <span
+                            class='category_name'>Search</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help28'><i class="icon-question-sign"></i> How do I
+                                search
+                                within a Storm?</a></li>
+                            <li class='help-question'><a href='#help30'><i class="icon-question-sign"></i> Can I search
+                                within comments?</a></li>
+                            <li class='help-question'><a href='#help31'><i class="icon-question-sign"></i> How do I
+                                search
+                                for a Storm? </a></li>
+                            <li class='help-question'><a href='#help70'><i class="icon-question-sign"></i> How do I know
+                                when there are new ideas in a storm?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Stickies"><i class="icon-chevron-right"></i> <span
+                            class='category_name'>Stickies</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help6'><i class="icon-question-sign"></i> How do I add
+                                an
+                                idea?</a></li>
+                            <li class='help-question'><a href='#help7'><i class="icon-question-sign"></i> How do I edit
+                                an
+                                idea?</a></li>
+                            <li class='help-question'><a href='#help73'><i class="icon-question-sign"></i> Can I edit a
+                                sticky created by someone else?</a></li>
+                            <li class='help-question'><a href='#help8'><i class="icon-question-sign"></i> How do I
+                                delete a
+                                Sticky?</a></li>
+                            <li class='help-question'><a href='#help14'><i class="icon-question-sign"></i> What kind of
+                                Stickies can I add?</a></li>
+                            <li class='help-question'><a href='#help15'><i class="icon-question-sign"></i> How do I add
+                                photos?</a></li>
+                            <li class='help-question'><a href='#help16'><i class="icon-question-sign"></i> How do I
+                                select
+                                multiple Stickies?</a></li>
+                            <li class='help-question'><a href='#help18'><i class="icon-question-sign"></i> How do I add
+                                videos?</a></li>
+                            <li class='help-question'><a href='#help19'><i class="icon-question-sign"></i> What is an
+                                Index
+                                Card/Substorm</a></li>
+                            <li class='help-question'><a href='#help20'><i class="icon-question-sign"></i> How do I
+                                create
+                                an Index Card? </a></li>
+                            <li class='help-question'><a href='#help22'><i class="icon-question-sign"></i> How do I add
+                                ideas to an Index Card?</a></li>
+                            <li class='help-question'><a href='#help23'><i class="icon-question-sign"></i> How do I
+                                change
+                                the color of a Sticky? </a></li>
+                            <li class='help-question'><a href='#help24'><i class="icon-question-sign"></i> How do I
+                                Lock/Unlock a Sticky?</a></li>
+                            <li class='help-question'><a href='#help33'><i class="icon-question-sign"></i> Can I copy an
+                                idea to another Storm?</a></li>
+                            <li class='help-question'><a href='#help35'><i class="icon-question-sign"></i> Can I include
+                                hyperlinks in Ideas?</a></li>
+                            <li class='help-question'><a href='#help38'><i class="icon-question-sign"></i> How do I
+                                leave a
+                                Substorm?</a></li>
+                            <li class='help-question'><a href='#help78'><i class="icon-question-sign"></i> Can I change
+                                the
+                                size of my sticky notes?</a></li>
+                            <li class='help-question'><a href='#help85'><i class="icon-question-sign"></i> Can I write
+                                on
+                                the board or draw lines between stickies?</a></li>
+                            <li class='help-question'><a href='#help86'><i class="icon-question-sign"></i> How do I see
+                                who
+                                created the sticky notes or ideas?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Storms"><i class="icon-chevron-right"></i> <span
+                            class='category_name'>Storms</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help1'><i class="icon-question-sign"></i> How do I
+                                create a
+                                Storm?</a></li>
+                            <li class='help-question'><a href='#help17'><i class="icon-question-sign"></i> How do I
+                                invite
+                                people to a Storm?</a></li>
+                            <li class='help-question'><a href='#help37'><i class="icon-question-sign"></i> How do I
+                                close a
+                                Storm? </a></li>
+                            <li class='help-question'><a href='#help48'><i class="icon-question-sign"></i> How do I
+                                duplicate or copy a Storm? </a></li>
+                            <li class='help-question'><a href='#help53'><i class="icon-question-sign"></i> How do I know
+                                if
+                                there is activity in my Storm? </a></li>
+                            <li class='help-question'><a href='#help74'><i class="icon-question-sign"></i> How do I
+                                change
+                                the template in a storm?</a></li>
+                            <li class='help-question'><a href='#help75'><i class="icon-question-sign"></i> How do I open
+                                a
+                                storm I previously closed?</a></li>
+                            <li class='help-question'><a href='#help82'><i class="icon-question-sign"></i> Who is the
+                                admin
+                                of a storm?</a></li>
+                            <li class='help-question'><a href='#help91'><i class="icon-question-sign"></i> How do I
+                                change
+                                the title of the storm?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Subscriptions"><i class="icon-chevron-right"></i> <span class='category_name'>Subscriptions</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help68'><i class="icon-question-sign"></i> What are the
+                                benefits to a paid subscription?</a></li>
+                            <li class='help-question'><a href='#help64'><i class="icon-question-sign"></i> How do I
+                                disable
+                                users on my team?</a></li>
+                            <li class='help-question'><a href='#help76'><i class="icon-question-sign"></i> How do I
+                                deactivate a person who's no longer with the company and I want permanently removed?</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#Templates"><i class="icon-chevron-right"></i> <span
+                            class='category_name'>Templates</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help2'><i class="icon-question-sign"></i> How do I
+                                create my
+                                own template?</a></li>
+                            <li class='help-question'><a href='#help39'><i class="icon-question-sign"></i> How to I
+                                customize the template section titles? </a></li>
+                            <li class='help-question'><a href='#help88'><i class="icon-question-sign"></i> How do I
+                                resize
+                                the templates?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Voting"><i class="icon-chevron-right"></i> <span
+                            class='category_name'>Voting</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help51'><i class="icon-question-sign"></i> How do I vote
+                                on
+                                a Sticky?</a></li>
+                            <li class='help-question'><a href='#help12'><i class="icon-question-sign"></i> Can I vote
+                                more
+                                than one time on a sticky note?</a></li>
+                            <li class='help-question'><a href='#help46'><i class="icon-question-sign"></i> How do I
+                                remove a
+                                vote from a sticky note?</a></li>
+                            <li class='help-question'><a href='#help47'><i class="icon-question-sign"></i> How do I
+                                change
+                                the number of votes per user?</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Errors"><i class="icon-chevron-right"></i> <span
+                            class='category_name'>Errors</span></a>
+                        <ul class='help-section'>
+                            <li class='help-question'><a href='#help79'><i class="icon-question-sign"></i> Unable to
+                                Connect
+                                to Realtime Server</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#ContactUs"><i class="icon-chevron-right"></i> Didn't Find an Answer?</a></li>
+                </ul>
+            </div>
+
+            <div class="fixed-body">
+                <div id="help-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control help-search" name="faqs"
+                               placeholder="What can we help you with today?">
+
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary" type="button"><span
+                                    class="glyphicon glyphicon-search"></span>
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="help-body">
+                    <div class='help-anchor' id='Getting_Started'></div>
+                    <div class='help-category' helpid='0' hash='Getting_Started'><span>Getting Started</span></div>
+                    <div id='help54' helpid='54' class='help-question'><span>Create a Storm</span></div>
+                    <div class='help-answer'>Click <img
+                            src="{{ STATIC_URL }}stormboard/images/faq/Create%2ba%2bStorm.png"
+                            alt="" height="" width="120" alt="Create Storm Button">, name
+                        your
+                        storm and click okay. You can change the template after your storm is created.
+                    </div>
+                    <div id='help55' helpid='55' class='help-question'><span>Add Content</span></div>
+                    <div class='help-answer'>To add content to a Storm, simply double click where you want the new
+                        sticky
+                        created.
+
+                        Then, select a Sticky type, add the appropriate content (either text, photo, video, document or
+                        sketch) and press enter (or the checkmark in the top corner. That's it! <br>
+                    </div>
+                    <div id='help56' helpid='56' class='help-question'><span><span>Invite</span> People</span></div>
+                    <div class='help-answer'>Storms are designed to be collaborative. Invite some friends or colleagues
+                        to
+                        participate!<br>
+                        <ol>
+                            <li>Select the <img src="{{ STATIC_URL }}stormboard/images/faq/share2.png"
+                                                alt="Invite Users"
+                                                width="60">
+                                button at the bottom of the storm.
+                            </li>
+                            <li>Copy the Storm URL OR the Storm ID and Key and send it to anyone you want to invite. OR.
+                            </li>
+                            <li>Enter the user's email and we will send them an invitation.</li>
+                        </ol>
+                        <br>
+
+                        If your invitees haven't received your invite, ask them to check their spam folder (or in Gmail
+                        the
+                        Promotions tab) as some email programs filter our invites. You will also see any outstanding
+                        invites
+                        in the Invites Dashboard on your Stomboard home page.
+                        <br>
+                        <br>
+                        Additional Notes Regarding Adding Team Members to Startup &amp; Team Plans
+                        <ol>
+                            <li>If you are on a Startup or Team subscription anyone invited to your storms will be added
+                                to
+                                your team and will gain access to the Startup or Team features (depending on your plan).
+                            </li>
+                            <li>They will also be able to invite other <span class="hi-lite">team members</span> to
+                                their
+                                own storms (created in the Free, Startup or Team plan).
+                            </li>
+                            <li>All storms private and available only to participants that have been specifically
+                                invited to
+                                them. Members of your team do not automatically gain access to all storms and must be
+                                invited to each one individually, as needed.
+                            </li>
+                        </ol>
+                    </div>
+                    <div id='help69' helpid='69' class='help-question'><span>Choosing a Template</span></div>
+                    <div class='help-answer'>Click the template button <img
+                            src="{{ STATIC_URL }}stormboard/images/faq/template.png" width="60"> to open our template
+                        picker. <br><br>
+
+                        Stormboard has around 100 templates, you can search for a template using keywords to find the
+                        right
+                        template for you. <br><br>
+
+                        With the blank template is that you can start adding ideas to the Storm and then later decide
+                        how
+                        best to organize those ideas.
+                    </div>
+                    <div id='help83' helpid='83' class='help-question'>
+                        <span>How can I tell who I've invited to a storm?</span></div>
+                    <div class='help-answer'><p>You can see who you've invited to a storm in the Invites Dashboard that
+                        will
+                        appear on your homepage when you have outstanding or bounced invites.</p></div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Account'></div>
+                    <div class='help-category' helpid='0' hash='Account'><span>Account</span></div>
+                    <div id='help13' helpid='13' class='help-question'><span>How do I reset my password?</span></div>
+                    <div class='help-answer'> On the top right corner of the screen, select the button with your avatar:
+                        <img src="{{ STATIC_URL }}stormboard/images/faq/NamePlate.png" alt="NamePlate" width="175">.
+                        Then,
+                        select the <b>Change Password</b> option from the drop-down menu.
+                    </div>
+                    <div id='help36' helpid='36' class='help-question'><span>How do I upgrade, cancel or downgrade my subscription?</span>
+                    </div>
+                    <div class='help-answer'>As long as you are signed into Stormboard, you can visit: <a
+                            href="pricing.html">Stormboard.com/main/pricing</a> and upgrade or downgrade your account.
+                    </div>
+                    <div id='help40' helpid='40' class='help-question'>
+                        <span>Where do I find my account information?</span>
+                    </div>
+                    <div class='help-answer'>You can access your account information from the profile badge in the top
+                        right
+                        corner of your browser, e.g.: <img src="{{ STATIC_URL }}stormboard/images/faq/NamePlate.png"
+                                                           alt=""
+                                                           width="175">. Click this badge and select <b>Account
+                            Settings</b>
+                        where you will be able to access your: <br>
+                        <ul>
+                            <li>&nbsp;&nbsp;&nbsp;Name</li>
+                            <li>&nbsp;&nbsp;&nbsp;Profile Picture</li>
+                            <li>&nbsp;&nbsp;&nbsp;Notifications</li>
+                            <li>&nbsp;&nbsp;&nbsp;Password</li>
+                            <li>&nbsp;&nbsp;&nbsp;Connected Apps</li>
+                            <li>&nbsp;&nbsp;&nbsp;Billing History</li>
+                        </ul>
+                    </div>
+                    <div id='help59' helpid='59' class='help-question'><span>How do I close my account?</span></div>
+                    <div class='help-answer'>If you aren't on a subscription plan, Stormboard is free so there is no
+                        need to
+                        close your account. You can come back anytime. To change to the free plan goto: <a
+                                href="pricing.html">http://stormboard.com/main/pricing</a> and select the free plan.
+                    </div>
+                    <div id='help71' helpid='71' class='help-question'><span>Can I be involved in a storm without setting up an account?</span>
+                    </div>
+                    <div class='help-answer'>No, all users require an account so we can track ideas, comments and votes
+                        by
+                        user. This makes for great reporting, accountability, and privacy of access.
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Comments'></div>
+                    <div class='help-category' helpid='0' hash='Comments'><span>Comments</span></div>
+                    <div id='help42' helpid='42' class='help-question'><span>How do I comment?</span></div>
+                    <div class='help-answer'>You can comment on any Sticky simply by clicking the <img
+                            src="{{ STATIC_URL }}stormboard/images/faq/Comment%2bBubble.png" alt="" width="40"> button
+                        on the
+                        bottom
+                        left hand corner of a sticky and typing your comment.
+                    </div>
+                    <div id='help43' helpid='43' class='help-question'><span>Can I delete or edit a comment?</span>
+                    </div>
+                    <div class='help-answer'>Yes, you can delete and edit your own comments. Storm administrators can
+                        delete
+                        anyones comments.
+                    </div>
+                    <div id='help44' helpid='44' class='help-question'><span>How do I leave general comments about the Storm?</span>
+                    </div>
+                    <div class='help-answer'>The best way to leave general comments is to use the <b>Chat</b> feature of
+                        Stormboard. On the bottom left corner of the screen, there are three buttons: <img
+                                src="{{ STATIC_URL }}stormboard/images/faq/Chat-Activity%2bButtons.png" alt="" height=""
+                                width="175">.
+                        Click the Chat button and the chat window will emerge.
+                    </div>
+                    <div id='help45' helpid='45' class='help-question'>
+                        <span>How do I know if there are new comments?</span>
+                    </div>
+                    <div class='help-answer'>There are two ways:<br>
+                        <ol>
+                            <li>When a Sticky has an new or unread comment, the speech bubble on the sticky will be
+                                filled
+                                in and will have a red number beside it for the number of comments made: <img
+                                        src="{{ STATIC_URL }}stormboard/images/faq/Black%2bComment%2bBubble.png" alt=""
+                                        width="30">.
+                                If
+                                there are read comments, the speech bubble will be a solid color: <img
+                                        src="{{ STATIC_URL }}stormboard/images/faq/Comment%2bBubble%2bLined.png" alt=""
+                                        width="30">.
+                            </li>
+                            <li>Furthermore, you can quickly scan the viewfinder for Stickies with a red border.
+                                Clicking
+                                the Sticky in the viewfinder will center the storm on that sticky. <br> <img
+                                        src="{{ STATIC_URL }}stormboard/images/faq/New-comments-sticky.png" alt=""
+                                        height=""
+                                        width="200"></li>
+                        </ol>
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Legend'></div>
+                    <div class='help-category' helpid='0' hash='Legend'><span>Legend</span></div>
+                    <div id='help34' helpid='34' class='help-question'><span>How do I edit the Legend? </span></div>
+                    <div class='help-answer'>On the right hand side of the Storm, there is a <b>Legend</b> that contains
+                        the
+                        color palette. Storm administrators can edit the names for the colors by hovering over the color
+                        and
+                        clicking the <img src="{{ STATIC_URL }}stormboard/images/faq/legendedit.png" alt="Legend"
+                                          width="200"> that
+                        appears. Type in a new name and press Enter.
+                        <br><br>
+                        The reporting and exporting will reflect the names that you add to the legend.
+                    </div>
+                    <div id='help90' helpid='90' class='help-question'>
+                        <span>How do I minimize/maximize the legend?</span>
+                    </div>
+                    <div class='help-answer'>Click the tab at the top of the legend to minimize or maximize the legend
+                        if
+                        it's in the way.<br><img src="{{ STATIC_URL }}stormboard/images/faq/legend.png" alt="Legend"
+                                                 width="200">
+                        <br><br>
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Mobile_and_Tablets'></div>
+                    <div class='help-category' helpid='0' hash='Mobile_and_Tablets'><span>Mobile and Tablets</span>
+                    </div>
+                    <div id='help9' helpid='9' class='help-question'><span>Is there an iPhone, Android Phone or Windows Phone App?</span>
+                    </div>
+                    <div class='help-answer'>Stormboard works on your phones web browser today. The spatial nature of
+                        stormboard does get a little tricky on the small screen of your phone. We're working on a
+                        Smartphone
+                        interface for Stormboard that allows you to add/retrieve ideas quickly and easily and is
+                        formatted
+                        for the smaller screen of your smart phone. Stay tuned!
+                    </div>
+                    <div id='help49' helpid='49' class='help-question'><span>Is there an iPad App?</span></div>
+                    <div class='help-answer'>Stormboard works great in the iPad browser. Stay tuned as we're planning a
+                        native iPad app.
+                    </div>
+                    <div id='help50' helpid='50' class='help-question'><span>Does Stormboard work on my tablet?</span>
+                    </div>
+                    <div class='help-answer'>Stormboard works using the web browser in your iPad, Android Tablet or
+                        Microsoft Surface. We're considering native iOS, Android and Windows apps in their app stores.
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Navigation'></div>
+                    <div class='help-category' helpid='0' hash='Navigation'><span>Navigation</span></div>
+                    <div id='help29' helpid='29' class='help-question'><span>How do I move around a Storm? </span></div>
+                    <div class='help-answer'>There are three ways to move around a Storm: <br>
+                        <ol>
+                            <li>You can click the Storm and drag it around (make sure you aren't clicking on a Sticky,
+                                that'll move the Sticky instead).
+                            </li>
+                            <li>On the top right corner of the Storm is the <b>Viewfinder Pane</b> (the little window
+                                with
+                                the <img src="{{ STATIC_URL }}stormboard/images/faq/Zoom%2bSlider.png" alt="Zoom Slider"
+                                         height=""
+                                         width="150"> slider) and overview of the storm. You can click the box in this
+                                pane
+                                and drag it around to navigate through the Storm.
+                            </li>
+                            <li>If you are using a trackpad and have two-finger scrolling available, you may navigate
+                                the
+                                Storm with two-fingers on the trackpad.
+                            </li>
+                        </ol>
+                    </div>
+                    <div id='help32' helpid='32' class='help-question'><span>How do I zoom in or out of a Storm? </span>
+                    </div>
+                    <div class='help-answer'>Simply drag the <img
+                            src="{{ STATIC_URL }}stormboard/images/faq/Zoom%2bSlider.png" alt="Zoom Slider" height=""
+                            width="150"> in the <b>Viewfinder Pane</b> in the top right corner of the Storm.
+                    </div>
+                    <div id='help52' helpid='52' class='help-question'><span>How can I navigate to other recently viewed Storms? </span>
+                    </div>
+                    <div class='help-answer'>Click the storm selector <img
+                            src="{{ STATIC_URL }}stormboard/images/faq/stormselect.png" alt="storm select" width="49">
+                        at
+                        the top of the Storm. A drop down menu will show you all your storms sorted by your last use.
+                        You
+                        can also search for storms and ideas to find your Storm. <br><br>
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Privacy'></div>
+                    <div class='help-category' helpid='0' hash='Privacy'><span>Privacy</span></div>
+                    <div id='help41' helpid='41' class='help-question'><span>Who can see my Storms?</span></div>
+                    <div class='help-answer'>The only people who can see your Storms are those you <a
+                            href="help.html#help17">invite</a>. <br><br>
+                    </div>
+                    <div id='help57' helpid='57' class='help-question'><span>Can Stormboard see my Storms?</span></div>
+                    <div class='help-answer'>No, Stormboard cannot access any data in your Storms. Your Storms are
+                        completely private. <br> If you have a technical support issue, you may need to invite us to the
+                        Storm. After we've fixed it, we will remove ourselves from the Storm.
+                    </div>
+                    <div id='help58' helpid='58' class='help-question'><span>Are my ideas transmitted securely?</span>
+                    </div>
+                    <div class='help-answer'>We use a secure bank grade 256 bit SSL connection, so all your ideas are
+                        secure
+                        during transmission between your browser and our servers.
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Reports'></div>
+                    <div class='help-category' helpid='0' hash='Reports'><span>Reports</span></div>
+                    <div id='help25' helpid='25' class='help-question'><span>How do I make reports? </span></div>
+                    <div class='help-answer'>Making a report couldn't be easier. At the bottom of the Storm, click the
+                        reports button: <img src="{{ STATIC_URL }}stormboard/images/faq/Reports.png" alt="Reports"
+                                             width="50">. At
+                        the
+                        current time, we support four types of reports:<br>
+                        <dl>
+                            <dt>Wordle</dt>
+                            <dd>-A graphical representation of the words most commonly used in a Storm.</dd>
+                            <dt>Summary Report (PDF)</dt>
+                            <dd>-The summary report includes Usage data, Ideas, Comments, and Vote count for a Storm,
+                                nicely
+                                formatted in a PDF document.
+                            </dd>
+                            <dt>Excel Report (XLS)</dt>
+                            <dd>-Exporting your Storm to a spreadsheet (XLS) will give you all the power of Excel for
+                                analyzing your Storm.
+                            </dd>
+                            <dt>Wall View (PDF)</dt>
+                            <dd>-The Wall View report preserves the visual nature of your Storm. The PDF report looks
+                                exactly like your Storm.
+                            </dd>
+                            <dt>Outline (HTML)</dt>
+                            <dd>-The Outline report exports to a web page (html) as a list which includes the section
+                                headings with the sticky notes and index cards nested beneath them.
+                            </dd>
+                            <dt>Microsoft Word</dt>
+                            <dd>-The Microsoft Word is very similar to the Outline report, but instead of an html page
+                                it is
+                                exported to a .doc file that can be opened in Word.
+                            </dd>
+                            <dt>Microsoft PowerPoint</dt>
+                            <dd>-The PowerPoint report will export each of your sections as a slide within a PowerPoint
+                                presentation, with the heading placed at the top of the slide and the information from
+                                each
+                                sticky note and index card listed below.
+                            </dd>
+                            <dt>JSON, XML and OPML</dt>
+                            <dd>-These exports give you your storm data in three popular data interchange formats. These
+                                exports include all ideas, index cards and all ideas inside those index cards.
+                            </dd>
+                        </dl>
+
+                        <b>Read more about our reporting options <a
+                                href="http://blog.stormboard.com/2014/06/reporting-stormboard-whiteboard-sticky-notes-brainstorming-collaboration.html">here.</a></b>
+                    </div>
+                    <div id='help27' helpid='27' class='help-question'><span>Can I make custom reports? </span></div>
+                    <div class='help-answer'>We do offer custom reporting, but only for Team subscribers. We're able to
+                        customize your report with your logo, additional detail, and even present it in a style and file
+                        format of your choice.
+                    </div>
+                    <div id='help81' helpid='81' class='help-question'><span>Who can create reports?</span></div>
+                    <div class='help-answer'>Only storm participants with admin capabilities can create reports from a
+                        storm. This means the creator of the storm or anyone they've assigned admin capabilities to.
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Search'></div>
+                    <div class='help-category' helpid='0' hash='Search'><span>Search</span></div>
+                    <div id='help28' helpid='28' class='help-question'><span>How do I search within a Storm?</span>
+                    </div>
+                    <div class='help-answer'>In the upper right hand corner of the Storm there is a <b>Search</b>
+                        button:
+                        <img src="{{ STATIC_URL }}stormboard/images/faq/Search.png" alt="Search" width="25">. Click this
+                        and
+                        the following search window will open: <br>
+                        <img src="{{ STATIC_URL }}stormboard/images/faq/Search-box.png" alt="" width="150"></div>
+                    <div id='help30' helpid='30' class='help-question'><span>Can I search within comments?</span></div>
+                    <div class='help-answer'>You can search for comments made by specific participants, or unread
+                        comments.
+                    </div>
+                    <div id='help31' helpid='31' class='help-question'><span>How do I search for a Storm? </span></div>
+                    <div class='help-answer'>If you are logged in at <a
+                            href="/">http://www.stormboard.com</a>,
+                        you can use the <img src="{{ STATIC_URL }}stormboard/images/faq/StormSearch.png"
+                                             alt="Storm Search"
+                                             width="175">
+                        search box. Once you search, we will show you all your Storms that contain the search terms,
+                        listed
+                        below the search box.<br><br>
+
+                        You can also search for a Storm (or idea) by clicking the last item in <img
+                                src="{{ STATIC_URL }}stormboard/images/faq/Breadcrumbs.png" width="175"
+                                alt="Breadcrumbs">. From
+                        here,
+                        you will see a drop-down menu with recently opened Storms as well as a search bar that allows
+                        you to
+                        search within all your Storms.
+                    </div>
+                    <div id='help70' helpid='70' class='help-question'><span>How do I know when there are new ideas in a storm?</span>
+                    </div>
+                    <div class='help-answer'>When someone has placed a new sticky in a storm you can identify it by:
+
+                        <ol>
+                            <li>Using the search panel: <br><img
+                                    src="{{ STATIC_URL }}stormboard/images/faq/Viewfinder-new-sticky.png"
+                                    alt=""
+                                    width="250"></li>
+                            <br>
+                            <li>Using the viewfinder. There will be a colored dot in the middle of all new sticky notes:<br><img
+                                    src="{{ STATIC_URL }}stormboard/images/faq/New-comments-sticky.png" alt=""
+                                    width="200"></li>
+                        </ol>
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Stickies'></div>
+                    <div class='help-category' helpid='0' hash='Stickies'><span>Stickies</span></div>
+                    <div id='help6' helpid='6' class='help-question'><span>How do I add an idea?</span></div>
+                    <div class='help-answer'>An Idea is a Sticky with text on it. You can add an Idea by double clicking
+                        anywhere on the Storm. Wherever you click is where the idea will show up. <br><br>
+
+                        You can turn on rapid fire mode and a fresh dialog will automatically popup so you can quickly
+                        add
+                        another idea.<br><br></div>
+                    <div id='help7' helpid='7' class='help-question'><span>How do I edit an idea?</span></div>
+                    <div class='help-answer'>You can edit ideas in two ways: <br>
+                        <ol>
+                            <li>Double click the Sticky.</li>
+                            <li>Click the <img src="{{ STATIC_URL }}stormboard/images/faq/Cog.png" alt="Cog" width="20">
+                                in the
+                                corner
+                                of the sticky and select <b>Edit</b>.
+                            </li>
+                        </ol>
+                    </div>
+                    <div id='help73' helpid='73' class='help-question'>
+                        <span>Can I edit a sticky created by someone else?</span></div>
+                    <div class='help-answer'>Yes. This function can be turned on or off by the storm admin in the Storm
+                        Setup window. This feature is only available to paid subscribers.<br>
+                        <ol>
+                            <li>Click the <img src="{{ STATIC_URL }}stormboard/images/faq/Cog.png" alt="Cog" width="20">
+                                in the
+                                corner
+                                of the sticky and select <b>Edit</b> or double click on the sticky.
+                            </li>
+                            <li>To see the changes made to a sticky click on the <img
+                                    src="{{ STATIC_URL }}stormboard/images/faq/Cog.png" alt="Cog" width="20"> and select
+                                Sticky
+                                History:<br> <img src="{{ STATIC_URL }}stormboard/images/faq/StickyHistory.png"
+                                                  alt="Sticky History" width="150">
+                            </li>
+                        </ol>
+
+                        <b>To read more about editing sticky notes created by others, click <a
+                                href="http://blog.stormboard.com/2014/05/edit-sticky-notes-sticky-note-history.html"
+                                target="blank">here.</a></b></div>
+                    <div id='help8' helpid='8' class='help-question'><span>How do I delete a Sticky?</span></div>
+                    <div class='help-answer'>Click the <img src="{{ STATIC_URL }}stormboard/images/faq/Cog.png"
+                                                            alt="Cog"
+                                                            width="20"> in the corner of the Sticky and select
+                        <b>Delete</b>.
+                        (This cannot be undone.) Storm Administrators can delete any stickies. Users can only delete
+                        their
+                        own stickies.
+                    </div>
+                    <div id='help14' helpid='14' class='help-question'><span>What kind of Stickies can I add?</span>
+                    </div>
+                    <div class='help-answer'>There are six kinds of Stickies: <br>
+                        <ol>
+                            <li><img src="{{ STATIC_URL }}stormboard/images/faq/6stickies.png" width="400" alt="Sticky"
+                                     width="50"><br><br>Text,
+                                sketches, images, videos, index cards and files.
+                            </li>
+                    </div>
+                    <div id='help15' helpid='15' class='help-question'><span>How do I add photos?</span></div>
+                    <div class='help-answer'>You can add photos in two ways: <br>
+                        <ol>
+                            <li>Drag &amp; drop the photo into the Storm.</li>
+                            <li>Double click the wall to add an idea and select the <img
+                                    src="{{ STATIC_URL }}stormboard/images/faq/6stickies.png" alt="Photo" height=""
+                                    width="400">
+                                image
+                                button. Then, use the <b>Choose Image</b> button to find the photo on your computer,
+                                from
+                                Box or Onedrive.
+                            </li>
+                        </ol>
+                    </div>
+                    <div id='help16' helpid='16' class='help-question'><span>How do I select multiple Stickies?</span>
+                    </div>
+                    <div class='help-answer'>Press and hold the <b>Shift</b> key and click on a blank area on the storm
+                        and
+                        drag the cursor to select as many Stickies as you like. The selected sticky notes will be
+                        highlighted in blue. <img src="{{ STATIC_URL }}stormboard/images/faq/Select-multiple-sticky.png"
+                                                  alt="" width="200"><br><br>
+
+                        A menu will show up at the top allowing you to align images to a grid, change their color or
+                        copy/move ideas.<br>
+                    </div>
+                    <div id='help18' helpid='18' class='help-question'><span>How do I add videos?</span></div>
+                    <div class='help-answer'>Create a sticky note and then select the video option. You can either
+                        search
+                        for a video or paste in your YouTube video url. Click the checkmark and the video will be
+                        embedded
+                        into your storm!
+                    </div>
+                    <div id='help19' helpid='19' class='help-question'><span>What is an Index Card/Substorm</span></div>
+                    <div class='help-answer'>Substorms allow your to have a Storm within a Storm. Users on the Team
+                        Subscription, can drill into any Index Card where it can have its own template and there is no
+                        limit
+                        to how far Index Cards can be nested.
+                    </div>
+                    <div id='help20' helpid='20' class='help-question'><span>How do I create an Index Card? </span>
+                    </div>
+                    <div class='help-answer'>You create an Index Card in two ways:
+                        <ol>
+                            <li>Select the <b>Index Card</b> button above the Sticky note in the top left corner of the
+                                Storm. Then, create just as you would a regular sticky.
+                            </li>
+                            <li>Click the <img src="{{ STATIC_URL }}stormboard/images/faq/Cog.png" alt="Cog" width="20">
+                                on
+                                the regular sticky, then select <b>Make Index Card</b>. This will convert the Sticky to
+                                an
+                                Index Card.
+                            </li>
+                        </ol>
+                    </div>
+                    <div id='help22' helpid='22' class='help-question'><span>How do I add ideas to an Index Card?</span>
+                    </div>
+                    <div class='help-answer'>You can add ideas to an Index Card in three ways: <br>
+                        <ol>
+                            <li>You can drag stickies and drop them on top of the Index Card</li>
+                            <li>Click on the Index Card in order to create a new sticky/line</li>
+                            <li>Enter the Substorm by clicking the stack icon on the top of the Index Card and then
+                                creating
+                                stickies in the usual way.
+                            </li>
+                            <ol>
+                            </ol>
+                        </ol>
+                    </div>
+                    <div id='help23' helpid='23' class='help-question'>
+                        <span>How do I change the color of a Sticky?  </span>
+                    </div>
+                    <div class='help-answer'>You can change the color in two ways:<br>
+                        <ol>
+                            <li>Before creating a new Sticky, select the color you would like from the legend on the
+                                left
+                                hand side of the Storm.
+                            </li>
+                            <li>Click the <img src="{{ STATIC_URL }}stormboard/images/faq/Cog.png" alt="Cog" width="20">
+                                on
+                                a Sticky and then select the color you want from the drop-down menu.
+                            </li>
+                        </ol>
+                    </div>
+                    <div id='help24' helpid='24' class='help-question'><span>How do I Lock/Unlock a Sticky?</span></div>
+                    <div class='help-answer'>You can lock a sticky in place by clicking the <img
+                            src="{{ STATIC_URL }}stormboard/images/faq/Cog.png" alt="Cog" width="20"> and then selecting
+                        <b>Lock
+                            Sticky</b>. You can unlock a sticky by following the same steps and selecting <b
+                        <unlock sticky
+                        <="" b="">. <br>
+                        When a sticky is locked, you will see a thumbtack pinning it to the Storm. It cannot be moved or
+                        edited in any way while locked. </b
+                        <unlock>
+                    </div>
+                    <div id='help33' helpid='33' class='help-question'><span>Can I copy an idea to another Storm?</span>
+                    </div>
+                    <div class='help-answer'>Yes! Simply click the <img
+                            src="{{ STATIC_URL }}stormboard/images/faq/Cog.png"
+                            alt="Cog" width="20"> on the Sticky and select
+                        <b>Copy/Move
+                            to...</b>. Then follow the prompts.
+                    </div>
+                    <div id='help35' helpid='35' class='help-question'><span>Can I include hyperlinks in Ideas?</span>
+                    </div>
+                    <div class='help-answer'>Yes! If the URL contains a www, like <a
+                            href="/">www.stormboard.com</a>, then just type that and Stormboard will
+                        automatically convert the text to a link. If the URL doesn't, then make sure you include
+                        'http://'.
+                        We'll hyperlink these automatically, there's no need for you to include any HTML code.
+                    </div>
+                    <div id='help38' helpid='38' class='help-question'><span>How do I leave a Substorm?</span></div>
+                    <div class='help-answer'>If you are using a Storm and enter a Substorm through an Index Card, you
+                        can
+                        return to the parent Storm by simply clicking the name of the parent Storm at the top of the
+                        screen.
+                        <br><br>
+
+                        When you are within a Substorm, if you look to the top of the Storm, you will see a little
+                        <b>Home</b> icon, then a <b>&gt;</b> and the name of the parent Storm. Then, another <b>&gt;</b>
+                        and
+                        the name of the first Substorm, and so on until you see the name of the Substorm you are
+                        currently
+                        viewing. Each of these names are clickable. Clicking any one of them will lead you back to that
+                        Storm or Substorm.
+                    </div>
+                    <div id='help78' helpid='78' class='help-question'>
+                        <span>Can I change the size of my sticky notes?</span></div>
+                    <div class='help-answer'>No, all sticky notes (text, image, document, video &amp; sketch) are the
+                        same
+                        size so they can all be judged equally and it makes it easier to keep your storms aligned and
+                        tidy.
+                    </div>
+                    <div id='help85' helpid='85' class='help-question'><span>Can I write on the board or draw lines between stickies?</span>
+                    </div>
+                    <div class='help-answer'><p>Stormboard does not allow drawing directly on the board as it can't be
+                        properly reported on. The sketch tool is available for hand drawings and the line connector
+                        feature
+                        can be used to connect sticky notes.</p>
+
+                        <p>Refer to our <a href="help.html#Templates">Templates Help</a> for information on creating
+                            custom
+                            templates.</div>
+                    <div id='help86' helpid='86' class='help-question'><span>How do I see who created the sticky notes or ideas?</span>
+                    </div>
+                    <div class='help-answer'>In order to see who has created the sticky notes in your storm the
+                        administrator needs to:
+                        <ol>
+                            <li>Select the Storm Setup menu from the bottom menu</li>
+                            <li>Turn the Show Idea Creators option to Show.</li>
+                        </ol>
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Storms'></div>
+                    <div class='help-category' helpid='0' hash='Storms'><span>Storms</span></div>
+                    <div id='help1' helpid='1' class='help-question'><span>How do I create a Storm?</span></div>
+                    <div class='help-answer'>To create a Storm click the create a storm button<img
+                            src="{{ STATIC_URL }}stormboard/images/faq/Create%2ba%2bStorm.png" alt="" height=""
+                            width="100">,
+                        enter the name of the storm and you're ready to go.
+                    </div>
+                    <div id='help17' helpid='17' class='help-question'><span>How do I invite people to a Storm?</span>
+                    </div>
+                    <div class='help-answer'>
+                        <ol>
+                            <li>Select the <img src="{{ STATIC_URL }}stormboard/images/faq/Invite%2bUsers.png"
+                                                alt="Invite Users" width="25"> button on the left hand side of the
+                                Storm.
+                            </li>
+                            <li>Use the <img src="{{ STATIC_URL }}stormboard/images/faq/Share.png" alt="Invite Users"
+                                             width="40"> button on the bottom of the screen.
+                            </li>
+                            <li>Share the Storm URL or Storm ID and Key with the user
+                                -OR- enter the user's email and we will send them an invitation.
+                            </li>
+                            <li>You can monitor your outstanding storm invites with the Outstanding Invites dashboard
+                                that
+                                will appear on your home page. You can also re-send and cancel invites from there.
+                            </li>
+                        </ol>
+                    </div>
+                    <div id='help37' helpid='37' class='help-question'><span>How do I close a Storm? </span></div>
+                    <div class='help-answer'>Closing a Storm is easy, but you can only do it if you are an Owner/Creator
+                        of
+                        the Storm you want to close. <br>
+
+                        To close a Storm, click the <img src="{{ STATIC_URL }}stormboard/images/faq/Setup.png"
+                                                         alt="Setup"
+                                                         height="" width="60"> menu at the bottom of the Storm. Then in
+                        the
+                        pop-up menu, bottom left, select <img
+                                src="{{ STATIC_URL }}stormboard/images/faq/Close%2bThis%2bStorm.png"
+                                alt="Close This Storm"
+                                height="" width="80">.
+                    </div>
+                    <div id='help48' helpid='48' class='help-question'><span>How do I duplicate or copy a Storm? </span>
+                    </div>
+                    <div class='help-answer'>This is an administrator feature. Simply go to: <a
+                            href="http://stormboard.com/storms/my">http://stormboard.com/storms/my</a> and click the
+                        <img
+                                src="{{ STATIC_URL }}stormboard/images/faq/Duplicate%2bStorm.png" alt="Duplicate"
+                                height=""
+                                width="75"> button on the right hand side of the screen.
+                    </div>
+                    <div id='help53' helpid='53' class='help-question'>
+                        <span>How do I know if there is activity in my Storm? </span></div>
+                    <div class='help-answer'>Within a Storm the Activity button, <img
+                            src="{{ STATIC_URL }}stormboard/images/faq/Activity%2bhighlight.png" alt="Activity Badge"
+                            width="50"> will have a number badge indicating how many actions have taken place since you
+                        last
+                        logged in. Clicking on individual entries will take you to the relevant Sticky.
+                    </div>
+                    <div id='help74' helpid='74' class='help-question'>
+                        <span>How do I change the template in a storm?</span>
+                    </div>
+                    <div class='help-answer'>To change your storm template click the <img
+                            src="{{ STATIC_URL }}stormboard/images/faq/template.png" alt="Setup" height="" width="60">
+                        menu
+                        at the bottom of the Storm.
+                    </div>
+                    <div id='help75' helpid='75' class='help-question'>
+                        <span>How do I open a storm I previously closed?</span></div>
+                    <div class='help-answer'>Click on the Storms menu item at the top of the page and select Closed
+                        Storms
+                        from the dropdown menu. Once on the Closed Storms page simply find the storm you want to re-open
+                        and
+                        click the Re-Open Storm button to the right of it. The storm should now show in your active
+                        storms
+                        again.
+                    </div>
+                    <div id='help82' helpid='82' class='help-question'><span>Who is the admin of a storm?</span></div>
+                    <div class='help-answer'><p>The admin of a storm is automatically the person who created it. If you
+                        would like to have more than one admin on a storm the storm creator will need to assign
+                        administrator capabilities. This can be done by hovering over the participant's avatar in the
+                        participant board and click the "Make Storm Administrator" button.</p>
+
+                        <p>Admin capabilities can be revoked at any time by the creator of the storm.</p>
+
+                        <p>Multiple administrators are only available to Team subscribers.</p></div>
+                    <div id='help91' helpid='91' class='help-question'>
+                        <span>How do I change the title of the storm?</span>
+                    </div>
+                    <div class='help-answer'>Click on the storm setup button and change the Storm Name.</div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Subscriptions'></div>
+                    <div class='help-category' helpid='0' hash='Subscriptions'><span>Subscriptions</span></div>
+                    <div id='help68' helpid='68' class='help-question'>
+                        <span>What are the benefits to a paid subscription?</span></div>
+                    <div class='help-answer'>You can see all the features on the <a href="pricing.html">Stormboard
+                        Pricing</a> page.
+                    </div>
+                    <div id='help64' helpid='64' class='help-question'><span>How do I disable users on my team?</span>
+                    </div>
+                    <div class='help-answer'>You can disable users that aren't in any open Storms at: <a
+                            href="https://stormboard.com/users/account#team">https://stormboard.com/users/account#team</a>.
+                        When disabled, they won't be billed on the following billing cycle.
+
+                        Users are automatically re-activated if they login or if they are invited to an active Storm.
+                    </div>
+                    <div id='help76' helpid='76' class='help-question'><span>How do I deactivate a person who's no longer with the company and I want permanently removed?</span>
+                    </div>
+                    <div class='help-answer'>Please use our contact form to send us an email containing the email
+                        address of
+                        the person you'd like removed from your team and we will remove them.
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Templates'></div>
+                    <div class='help-category' helpid='0' hash='Templates'><span>Templates</span></div>
+                    <div id='help2' helpid='2' class='help-question'><span>How do I create my own template?</span></div>
+                    <div class='help-answer'>Custom templates are available on our paid subscriptions. There are 3
+                        options:
+                        <ol>
+                            <li>If you chose one of the "Section Templates" you can change the section headings by
+                                clicking
+                                on the <img src="{{ STATIC_URL }}stormboard/images/faq/Section-Cog.png"
+                                            alt="Section Cog"
+                                            width="25"> in the upper right hand corner of each section.
+                            </li>
+                            <li>We're happy to build templates, at no charge, if it's a template that we think other
+                                users
+                                would like and we can add to our library. Please contact us about this option.
+                            </li>
+                            <li>If you want a truly custom template with your own private processes, branding, or
+                                colors,
+                                we're happy to do that as a consulting service. In this case your template will be
+                                available
+                                for only your team.
+                            </li>
+                        </ol>
+                    </div>
+                    <div id='help39' helpid='39' class='help-question'>
+                        <span>How to I customize the template section titles? </span></div>
+                    <div class='help-answer'>This feature is currently only available to our paid subscribers. <br>
+                        You can only customize the titles of sections in the <b><a
+                                href="http://blog.stormboard.com/2014/07/customizable-section-templates-stormboard.html"
+                                target="blank">Sections Templates</a></b>, for now (These are the 3, 4, 5, 6,... section
+                        templates.) <br>
+                        You do this by clicking the <img src="{{ STATIC_URL }}stormboard/images/faq/Section-Cog.png"
+                                                         alt="Section Cog" width="25"> in the corner of the section
+                        whose
+                        title you'd like to change. Then, in the menu that pops-up, you can change the digit or the
+                        title
+                        associated with that section.
+                    </div>
+                    <div id='help88' helpid='88' class='help-question'><span>How do I resize the templates?</span></div>
+                    <div class='help-answer'>If you need more space on your storm to hold more stickies, simply click
+                        the
+                        <img src="{{ STATIC_URL }}stormboard/images/faq/template.png" width="60"> templates button which
+                        opens our template picker.<br><br>
+
+                        You can then choose the size of the template.<br>
+                        <img src="{{ STATIC_URL }}stormboard/images/faq/templatesize.png" width="293"><br><br>
+
+                        Your ideas will automatically stay in their proper sections, but you'll have more room for your
+                        ideas.
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Voting'></div>
+                    <div class='help-category' helpid='0' hash='Voting'><span>Voting</span></div>
+                    <div id='help51' helpid='51' class='help-question'><span>How do I vote on a Sticky?</span></div>
+                    <div class='help-answer'>When an idea has not been voted on yet there will be a <img
+                            src="{{ STATIC_URL }}stormboard/images/faq/Voting-0.png" alt="0 Votes" width="25"> that
+                        shows up
+                        at the bottom of the sticky. To vote on the idea, click this icon <img
+                                src="{{ STATIC_URL }}stormboard/images/faq/Voting.png" alt="Voting" width="50"> and add
+                        or
+                        remove votes as needed. You can see how many votes you have available in the section above the
+                        participant avatars. <img src="{{ STATIC_URL }}stormboard/images/faq/Voting-Remaining.png"
+                                                  alt="Remaining Votes" width="150"></div>
+                    <div id='help12' helpid='12' class='help-question'>
+                        <span>Can I vote more than one time on a sticky note?</span></div>
+                    <div class='help-answer'>Yes! Just click the + sign again.</div>
+                    <div id='help46' helpid='46' class='help-question'>
+                        <span>How do I remove a vote from a sticky note?</span></div>
+                    <div class='help-answer'>To remove a vote, simply click the red -.</div>
+                    <div id='help47' helpid='47' class='help-question'>
+                        <span>How do I change the number of votes per user?</span></div>
+                    <div class='help-answer'>If you are an administrator or owner of a Storm, you can click the
+                        <b>Settings</b> button at the bottom of the Storm. On the pop-up menu, there is a space to
+                        change
+                        the number of <b>Votes Per Participant</b>.
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='Errors'></div>
+                    <div class='help-category' helpid='0' hash='Errors'><span>Errors</span></div>
+                    <div id='help79' helpid='79' class='help-question'><span>Unable to Connect to Realtime Server</span>
+                    </div>
+                    <div class='help-answer'><p>If you receive this error message when logging in to a storm, it
+                        typically
+                        means that you are behind a firewall that is blocking a connection to our Realtime Server.</p>
+
+                        <p>Our Realtime Server handles all the realtime actions in Stormboard such as ideas adding,
+                            moving,
+                            deleting, etc.</p>
+
+                        <p>
+                            <strong>Steps to Resolve this issue:</strong>
+                        </p>
+                        <ol>
+                            <li>Refresh your screen and see if it was a temporary connectivity issue</li>
+                            <li>Contact your IT department or administrator and request that they add a firewall rule to
+                                allow: https://realtime2.stormboard.com
+                            </li>
+                            <li>Contact Stormboard support</li>
+                        </ol>
+                        <p></p></div>
+                    <div class='help-spacer'>&nbsp;</div>
+                    <div class='help-anchor' id='ContactUs'></div>
+                    <div id='ContactUs' class='help-category'>Didn't Find an Answer?</div>
+                    <div class='help-answer'>
+                        <p>Contact us and we'll get back to you ASAP!</p>
+                        <button type="button" class="btn btn-primary" onclick="window.location='contact.html';"><span
+                                class="icon-bullhorn"></span> Contact Us
+                        </button>
+                    </div>
+                    <div class='help-spacer'>&nbsp;</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}
+
+{% block footer %}{% endblock %}

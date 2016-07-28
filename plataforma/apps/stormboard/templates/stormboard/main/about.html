@@ -1,0 +1,69 @@
+{% extends 'stormboard/layout.html' %}
+{% load i18n %}
+
+{% block body %}
+    <main>
+        <section class="content">
+            <div class="row col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+
+                <h3>Where we started</h3>
+
+                <p>Founded in Edmonton, Alberta, Canada in 2010 as Edistorm (a combination of Thomas Edison and
+                    Brainstorming), we're on a mission to transform how people collaborate, brainstorm and take action
+                    on
+                    their ideas. In 2013, we were selected as one of 40 companies to present on Stage at Launch Festival
+                    in
+                    San Francisco. This was a perfect opportunity to rebrand including a major upgrade to Stormboard
+                    (another mashup, this time Brainstorm + Whiteboard). Yeah... much better name right?</p>
+
+
+                <h3>We're here to solve two primary problems</h3>
+
+                <ol>
+                    <li>
+                        <p>We're here to end taking blurry photos of whiteboards (that you'll never look at) or rolling
+                            up
+                            flipcharts at the end of a big group meeting, only for those ideas to die a long and painful
+                            death because no one has the time or desire to transcribe that data into something
+                            useful.</p>
+
+                        <p>With Stormboard – all your ideas are always available on any device anywhere in the world and
+                            can
+                            be instantly exported to a smart PowerPoint, Word Document, Excel Spreadsheet or PDF. (And
+                            more
+                            nerdy formats too.)</p>
+                    </li>
+                    <li>
+                        <p>Collaborating with a remote team is a pain. Traditional screen sharing is broken with one
+                            person
+                            presenting and everyone else is “Storm BORED” watching (or more likely reading email.)</p>
+
+                        <p>With Stormboard – everyone is an active participant. Stormboard is real-time so everyone can
+                            see
+                            everything happing in the storm. Everyone can quickly and easily add ideas, comment and vote
+                            without having to wait their turn.</p>
+                    </li>
+                </ol>
+
+                <h3>Where we are now</h3>
+
+                <p>Fast forward to 2016 and Stormboard is trusted by thousands of companies (including ½ the Fortune 50)
+                    and
+                    hundreds of thousands of users in 181 countries around the world!</p>
+
+                <p>Three things are key to your Stormboard experience. It's EASY, FUN, FLEXIBLE & SECURE!</p>
+
+                <p>We hope you enjoy Stormboard as much as we enjoy building it! <a
+                        href="{% url 'stormboard:contact' %}">Contact us</a>
+                    if
+                    you want to find out more or get on a call to discuss your specific needs.</p>
+
+                <br>
+
+                <p>Sincerely,<br><strong>Team Stormboard</strong></p>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block footer %}{% endblock %}

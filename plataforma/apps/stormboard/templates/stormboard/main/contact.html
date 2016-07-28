@@ -1,0 +1,116 @@
+{% extends 'stormboard/layout.html' %}
+{% load i18n %}
+
+{% block body %}
+    <main>
+        <style type="text/css">
+            .phone-group {
+                display: none;
+            }
+        </style>
+        <script type="text/javascript">
+            var RecaptchaOptions = {theme: 'clean'};
+            $(function () {
+                var $inputReason = $("#inputReason");
+                $inputReason.change(function () {
+                    if ($(this).find("option:selected").data("phone") == 1) {
+                        $(".phone-group").fadeIn(300);
+                    } else {
+                        $(".phone-group").fadeOut(300);
+                    }
+                }).trigger("change");
+            });
+            function validate() {
+
+                $("#validate-error").remove();
+                var email = $("#inputEmail").val();
+                var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (!re.test(email)) {
+                    $("<div class='alert alert-danger'><span class='glyphicon glyphicon-info-sign'></span> Please enter a valid email address so we can respond</div>").insertBefore($(".btn-send"));
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
+        <aside id="page-header" class="tall">
+            <div class="row">
+                <h1>Contact Us</h1>
+                <h5>Send us a message, we'll get back to as soon as we can.</h5>
+            </div>
+        </aside>
+        <section class="content">
+            <form action="#" method="POST" role="form"
+                  onsubmit="return validate()">
+                <input type='hidden' name='CSRFName' value='SB_CSRF_596836334'/><input type='hidden' name='CSRFToken'
+                                                                                       value='41d95752918a57ded08460d54b44ad83e7ebb11da57e13a46d798f789fad71d56a3756781beb6cbcf7e2b9f54771e4c5c45b77ee5878c0c0344a40eb16312f96'/>
+
+                <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3"
+                     style="float:none"
+                     id="form-container">
+                    <div class="well">
+                        <input type="hidden" name="option" value="main"/>
+                        <input type="hidden" name="task" value="contact"/>
+
+
+                        <div class="form-group">
+                            <label for="inputReason">Reason</label>
+                            <select name="reason" class="form-control" id="inputReason">
+                                <option>--- Select Reason ---</option>
+                                <option>I have some questions before I register</option>
+                                <option>I have a suggestion</option>
+                                <option>I'd like to find out more about custom reporting</option>
+                                <option>I'd like to report a problem</option>
+                                <option data-phone="1">Billing questions & concerns</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputName">Name</label>
+                            <input type="text" class="form-control" name="name" id="inputName" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" name="email" id="inputEmail" value="">
+                        </div>
+
+                        <div class="form-group phone-group">
+                            <label for="inputEmail">Phone</label>
+                            <input type="text" class="form-control" name="phone" id="inputPhone" value=""
+                                   placeholder="Please enter your phone number if you'd like us to call you...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputComments">Comments</label>
+                        <textarea style="height:100px;" class="form-control" id="inputComments"
+                                  name="comments"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <script type="text/javascript"
+                                    src="https://www.google.com/recaptcha/api/challenge?k=6Lfgw_ISAAAAAMlO2Yja0EHgI1qM6CwoV6NkaMZc"></script>
+
+                            <noscript>
+                                <iframe src="https://www.google.com/recaptcha/api/noscript?k=6Lfgw_ISAAAAAMlO2Yja0EHgI1qM6CwoV6NkaMZc"
+                                        height="300" width="500" frameborder="0"></iframe>
+                                <br/>
+                                <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+                                <input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
+                            </noscript>
+                        </div>
+
+                        <button type="submit" name="cmdSubmit" class="btn btn-primary btn-send" value="Send"><span
+                                class="glyphicon glyphicon-comment"></span> Send
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+

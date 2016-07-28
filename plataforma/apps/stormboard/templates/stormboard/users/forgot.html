@@ -1,0 +1,49 @@
+{% extends 'stormboard/layout.html' %}
+{% load i18n %}
+
+{% block body %}
+    <main>
+        <aside id="page-header">
+            <div class="row">
+                <h1>Forgot Your Password?</h1>
+            </div>
+        </aside>
+
+        <section class="content">
+            <div class="row" style="margin-top:20px;">
+                <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                    <form action="#" method="post">
+                        <input type='hidden' name='CSRFName' value='SB_CSRF_1410209483'/><input type='hidden'
+                                                                                                name='CSRFToken'
+                                                                                                value='916050515744601f84ba16a8e0f42503b792d47b62797bfd68d258917440610d67ba145e9d64e5d1fbddf85dd7c8ea5ca0692c61eff7578046a6e90054773242'/>
+
+                        <input type="hidden" name="option" value="users"/>
+                        <input type="hidden" name="task" value="forgot"/>
+
+
+                        <p>Not to worry, enter your username or the email address you registered with and we'll reset
+                            your
+                            password.</p>
+
+                        <p>You will receive an email shortly after you request this change with your new login
+                            credentials.
+                            Once you login, you will be asked to reset your password again to something you will
+                            remember.</p>
+
+                        <label>Email Address or Username</label>
+                        <input type="text" name="needle" class="form-control" placeholder="e-mail address or username"
+                               style="width:100%;">
+
+                        <br>
+                        <button class="btn btn-primary" name="cmdSubmit"><span
+                                class="glyphicon glyphicon-refresh"></span>
+                            Reset Password
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block footer %}{% endblock %}

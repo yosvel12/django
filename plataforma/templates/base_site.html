@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load i18n %}
+<html>
+
+<head>
+    <title>{% block head_title %}{% endblock %}</title>
+
+    {% block extra_head %}{% endblock %}
+
+    {% block stylesheetsHeader %}{% endblock %}
+
+    {% block javascriptsHeader %}{% endblock %}
+
+    {% block stylesheets %} {% endblock %}
+
+    {% block javascripts %} {% endblock %}
+</head>
+
+<body>
+{% block extrajs %}{% endblock extrajs %}
+
+{% block header %} {% endblock %}
+
+{% block menu %} {% endblock %}
+
+{% block body %} {% endblock %}
+
+{% block singUp %} {% endblock %}
+
+{% block footer %}{% endblock %}
+
+</body>
+
+</html>

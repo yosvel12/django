@@ -1,0 +1,343 @@
+{% extends 'stormboard/layout.html' %}
+{% load i18n %}
+
+{% block stylesheets %}
+    <link rel='stylesheet' href='{{ STATIC_URL }}stormboard/css/pages/main.pricing.css'
+          type='text/css'/>
+{% endblock %}
+
+{% block body %}
+    <main>
+        <aside id="page-header">
+            <div class="row">
+                <h1>Education Plans & Pricing</h1>
+            </div>
+        </aside>
+        <section class="content">
+
+            <style media="screen">
+                h3 {
+                    margin-top: 40px;
+                }
+            </style>
+            <div class="container">
+                <h1 class="strikethrough-header"><span>Questions and Answers</span></h1>
+
+                <div class="pricing-qa col-md-offset-2 col-md-8">
+                    <h3>Who qualifies for Education Pricing?</h3>
+
+                    <p>Stormboard is proud to offer its software for free until July 31, 2016 as long as you meet these
+                        criteria.</p>
+
+                    <p>
+                    <ul>
+                        <li>For use in classroom education between teachers and students. (If you're using it for
+                            administrative work between faculty, we ask that you use our regular plans.)
+                        </li>
+                        <li>Used in a formally accredited K-12 or higher education school. </li>
+                        <li>All education accounts must be registered using a valid school email address. </li>
+                    </ul>
+                    </p>
+                    <p>If you want to use Stormboard for your faculty or administrative work or for profit teaching or
+                        facilitation work, please use our <a href="{% url 'stormboard:pricing' %}">regular plans</a>.
+                    </p>
+                    <!-- <p>All education accounts must be registered using a valid school email address. The education account is intended for use between teachers and students. If you want to use Stormboard for your education team or facilitation work, please use our <a href="/main/pricing">regular plans</a>.</p> -->
+
+                    <h3>How can you thank us?</h3>
+
+                    <p>We'd appreciate you <a href="https://twitter.com/stormboard"> tweeting and <a
+                            href="https://www.facebook.com/stormboard">sharing</a> Stormboard with your friends and
+                        colleagues of course!</p>
+
+                    <h3>Do you offer school or district pricing?</h3>
+
+                    <p>If you are an institution or educational district that is interested in discussing a full
+                        featured
+                        license, please <a href="{% url 'stormboard:contact' %}">contact us</a> and we’ll get the
+                        conversation started.
+                    </p>
+                </div>
+            </div>
+
+            <div class="plan-pricing">
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+                        <div class="row">
+                            <div class="col-sm-6 plan-col">
+                                <div class="plan-box">
+                                    <h2 class="plan-title">Free</h2>
+
+                                    <div class="plan-price"><span class="plan-currency">$</span>0</div>
+                                    <div class="plan-price-desc">
+                                        <p>for small teams or unlimited evaluation</p>
+                                    </div>
+
+                                    <div class="plan-buttons">
+                                        <button type='button' class='btn btn-success' onclick='dosignup();'>Sign Up Now
+                                            ?
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="plan-list">
+                                    <ul>
+                                        <li>
+                                            <div class="icon-checkmark"></div>
+                                            1 Storm Administrator
+                                        </li>
+                                        <li>
+                                            <div class="icon-checkmark"></div>
+                                            Unlimited Storms
+                                        </li>
+                                        <li>
+                                            <div class="icon-checkmark"></div>
+                                            Maximum 5 Users Per Storm
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 plan-col">
+                                <div class="plan-box">
+                                    <h2 class="plan-title">Educator</h2>
+
+                                    <div class="plan-price"><span class="plan-currency">$</span>0</div>
+                                    <div class="plan-price-desc lg">
+                                        <p>Free until<br>July 31, 2016</p>
+                                    </div>
+
+                                    <div class="plan-buttons">
+                                        <button type='button' class='btn btn-success' onclick='dosignup();'>Sign Up Now
+                                            ?
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="plan-list">
+                                    <ul>
+                                        <li>
+                                            <div class="icon-checkmark"></div>
+                                            1 Storm Administrator
+                                        </li>
+                                        <li>
+                                            <div class="icon-checkmark"></div>
+                                            Unlimited Storms
+                                        </li>
+                                        <li>
+                                            <div class="icon-checkmark"></div>
+                                            Unlimited Users Per Storm
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row tbl-pricing">
+                    <div class="col-feature col-feature-titles col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="pricing-title">Features</div>
+                        <div class="feature">Text <span class="glyphicon glyphicon-info-sign tip"
+                                                        title="The ability to create text stickies."></span></div>
+                        <div class="feature feature-grey">Photos <span class="glyphicon glyphicon-info-sign tip"
+                                                                       title="The ability to add photo stickies."></span>
+                        </div>
+                        <div class="feature">Videos <span class="glyphicon glyphicon-info-sign tip"
+                                                          title="The ability to link Youtube or Vimeo videos."></span>
+                        </div>
+                        <div class="feature feature-grey">Sketches <span class="glyphicon glyphicon-info-sign tip"
+                                                                         title="Draw sketches on stickies to get your ideas across visually."></span>
+                        </div>
+                        <div class="feature">Index Cards <span class="glyphicon glyphicon-info-sign tip"
+                                                               title="Index cards allow you to put multiple stickies into one card, sort and organize them and move them as a group."></span>
+                        </div>
+                        <div class="feature feature-grey">Documents <span class="glyphicon glyphicon-info-sign tip"
+                                                                          title="Upload documents including Word, PPT, Excel or PDF to your storm so your whole team can access them."></span>
+                        </div>
+                        <div class="feature">Sub-Storms <span class="glyphicon glyphicon-info-sign tip"
+                                                              title="Substorms allow you to visually organize all the ideas inside of an index card."></span>
+                        </div>
+                        <div class="feature feature-grey">Line Connectors <span
+                                class="glyphicon glyphicon-info-sign tip"
+                                title="Line connectors allows you to visually connect ideas together and create process flows."></span>
+                        </div>
+                        <div class="feature">Advanced Line Connectors <span class="glyphicon glyphicon-info-sign tip"
+                                                                            title="Advanced line connectors adds the ability to add arrow heads to show directionality of a connection, as well as labelling and changing the color of the line."></span>
+                        </div>
+                        <div class="feature-title">Storms Users</div>
+                        <div class="feature">Maximum Users Per Storm <span class="glyphicon glyphicon-info-sign tip"
+                                                                           title="Total number of users that can participate in a single storm."></span>
+                        </div>
+                        <div class="feature-title">Reporting</div>
+                        <div class="feature">Basic Reporting <span class="glyphicon glyphicon-info-sign tip"
+                                                                   title="A PDF export of the entire wall."></span>
+                        </div>
+                        <div class="feature feature-grey">Advanced Reporting <span
+                                class="glyphicon glyphicon-info-sign tip"
+                                title="A detailed summary report that details who contributed ideas including all the votes, comments and a breakdown of where in the template all the ideas are."></span>
+                        </div>
+                        <div class="feature">Idea Export <span class="glyphicon glyphicon-info-sign tip"
+                                                               title="Exporting of ideas to an Excel spreadsheet allows you to use your ideas in your external tools."></span>
+                        </div>
+                        <div class="feature feature-grey">Idea Import <span class="glyphicon glyphicon-info-sign tip"
+                                                                            title="Import an Excel spreadsheet or CSV file into your storm. You may also import a Stormboard Export file which will automatically assign the position and color to the new idea."></span>
+                        </div>
+                        <div class="feature-title">Templates</div>
+                        <div class="feature">Custom Titles <span class="glyphicon glyphicon-info-sign tip"
+                                                                 title="Ability to change the sections titles on our 3,5,6,10,12 or 15 section templates."></span>
+                        </div>
+                        <div class="feature feature-grey">Custom Templates <span
+                                class="glyphicon glyphicon-info-sign tip"
+                                title="With custom templates, we can model your existing business processes and make custom templates for you including branding them with your logos and colors."></span>
+                        </div>
+                        <div class="feature-title">Security</div>
+                        <div class="feature">SSL <span class="glyphicon glyphicon-info-sign tip"
+                                                       title="All your ideas are sent encrypted over a secure SSL browser session. The same level of security you use for your online bank."></span>
+                        </div>
+                        <div class="feature-title">Support</div>
+                        <div class="feature">Standard Support <span class="glyphicon glyphicon-info-sign tip"
+                                                                    title="Your support requests will be handled in a priority sequence over our free users."></span>
+                        </div>
+                        <div class="feature feature-grey">Priority Support <span
+                                class="glyphicon glyphicon-info-sign tip"
+                                title="Your support requests will be handled in a priority sequence."></span>
+                        </div>
+                    </div>
+                    <div class='col-feature col-md-4 col-sm-4 col-xs-4'>
+                        <div class='pricing-title'>Free</div>
+                        <div class='feature-on'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-title'>&nbsp;</div>
+                        <div class='feature-on'>
+                            <div class='feature-text'>5</div>
+                        </div>
+                        <div class='feature-title'>&nbsp;</div>
+                        <div class='feature-on'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-title'>&nbsp;</div>
+                        <div class='feature-on'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-title'>&nbsp;</div>
+                        <div class='feature-on'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-title'>&nbsp;</div>
+                        <div class='feature-on'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-close'></div>
+                        </div>
+                    </div>
+                    <div class='col-feature col-md-4 col-sm-4 col-xs-4'>
+                        <div class='pricing-title'>Educator</div>
+                        <div class='feature-on'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-title'>&nbsp;</div>
+                        <div class='feature-on'>
+                            <div class='feature-text'>Unlimited</div>
+                        </div>
+                        <div class='feature-title'>&nbsp;</div>
+                        <div class='feature-on'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-title'>&nbsp;</div>
+                        <div class='feature-on'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-title'>&nbsp;</div>
+                        <div class='feature-on'>
+                            <div class='icon-checkmark'></div>
+                        </div>
+                        <div class='feature-title'>&nbsp;</div>
+                        <div class='feature-on'>
+                            <div class='icon-close'></div>
+                        </div>
+                        <div class='feature-on feature-grey'>
+                            <div class='icon-close'></div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block footer %}{% endblock %}

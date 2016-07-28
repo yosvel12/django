@@ -1,0 +1,320 @@
+{% extends 'stormboard/layout.html' %}
+{% load i18n %}
+
+<!-- CSS de Bootstrap -->
+{% block stylesheets %}
+    <link rel='stylesheet' href='{{ STATIC_URL }}stormboard/css/pages/main.tour.css'
+          type='text/css'/>
+{% endblock %}
+
+{% block menu %} {% endblock %}
+
+{% block body %}
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header pull-left">
+                <a class="navbar-brand logo" href="/"><img src="{{ STATIC_URL }}stormboard/images/logo-thin%402x.png"
+                                                                    alt="Stormboard"/></a>
+            </div>
+
+            <div class="login">
+                <button type="button" class="btn btn-primary btn-login pull-right" onclick="dologin();">Login</button>
+                <button type="button" class="btn btn-primary btn-signup pull-right" onclick="dosignup();">Sign Up
+                </button>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li class='active'><a href='{% url 'stormboard:tour' %}'>Tour</a></li>
+                    <li class=''><a href='http://blog.stormboard.com/' target='_newtab'>Blog</a></li>
+                    <li class=''><a href='{% url 'stormboard:pricing' %}'>Plans & Pricing</a></li>
+                    <li class='dropdown'><a href='{% url 'stormboard:help' %}' class="dropdown-toggle"
+                                            data-toggle="dropdown">Help</a>
+                        <ul class="dropdown-menu">
+                            <li><a href='{% url 'stormboard:help' %}'>Help</a></li>
+                            <li><a href='{% url 'stormboard:browsers' %}'>Browser Compatibility</a></li>
+                            <li class='divider'></li>
+                            <li><a href='{% url 'stormboard:privacy' %}'>Privacy Policy</a></li>
+                            <li><a href='{% url 'stormboard:tos' %}'>Terms of Service</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="full-container">
+        <div class="page-header centered-header">
+            <h1>Stormboard Tour</h1>
+            <h5>Read about how fantastic Stormboard is and how it will revolutionize how you collaborate</h5>
+        </div>
+
+        <div class="jumbotron texture">
+            <div class="container">
+                <div class="col-md-5 col-lg-5">
+                    <h3 class="tour-title">Generate & Capture Ideas</h3>
+
+                    <p class="tour-text">Quickly add sticky notes, photos and videos to a shared wall. Generate more
+                        high
+                        quality ideas as everyone can contribute with their own authentic voice on their own
+                        device. </p>
+                </div>
+                <div class="col-md-7 col-lg-7 hidden-sm hidden-xs img">
+                    <img src="{{ STATIC_URL }}stormboard/images/splash/3dtile.png" class="tile3d">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-lg-7 hidden-sm hidden-xs img">
+                    <img src="{{ STATIC_URL }}stormboard/images/splash/macbook-left.png" class="macbook">
+                </div>
+                <div class="col-md-5 col-lg-5">
+                    <h3 class="tour-title">Comment on Ideas</h3>
+
+                    <p class="tour-text">All ideas have a comment thread allowing your team to clarify, debate and
+                        refine
+                        ideas. This gives you both better ideas and captures the discussion for future reference or
+                        debate.</p>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="container spy">
+                <div class="row">
+                    <div class="col-md-5 col-lg-5">
+                        <h3 class="tour-title">Prioritize your Ideas</h3>
+
+                        <p class="tour-text">Users get 'dots' to vote on their favorite ideas. They can add all their
+                            votes
+                            to one idea or spread them around. With one click, instantly see what ideas your team likes
+                            and
+                            dive deeper on the best ideas.</p>
+                    </div>
+                    <div class="col-md-7 col-lg-7 hidden-sm hidden-xs img">
+                        <img src="{{ STATIC_URL }}stormboard/images/splash/spyglass2.png" class="spyglass">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-lg-7 hidden-sm hidden-xs img">
+                    <p>
+                        <span class="icon-file-excel report-icon"></span>
+                        <span class="icon-file-pdf report-icon"></span>
+                    </p>
+
+                    <p>
+                        <span class="icon-file-powerpoint report-icon"></span>
+                        <span class="icon-file-word report-icon"></span>
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-5">
+                    <h3 class="tour-title">Reporting</h3>
+
+                    <p class="tour-text">Instantly generate innovation reports rather than waiting weeks to transcribe a
+                        photo of a whiteboard. Export everything to a spreadsheet enabling you to get ideas into your
+                        other
+                        corporate tools.</p>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="container spy">
+                <div class="row">
+                    <div class="col-md-5 col-lg-5">
+                        <h3 class="tour-title">Connect Remote Teams</h3>
+
+                        <p class="tour-text">Collaborate in realtime or on your own time (synchronously or
+                            asynchronously).
+                            Invite everyone into a single storm and everyone gets to actively participate rather than
+                            watching someone broadcast their screen. We're Stormboard not stormbored.</p>
+                    </div>
+                    <div class="col-md-7 col-lg-7 hidden-sm hidden-xs img">
+                        <img src="{{ STATIC_URL }}stormboard/images/splash/spyglass2.png" class="spyglass">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-lg-7 hidden-sm hidden-xs img">
+                    <img src="{{ STATIC_URL }}stormboard/images/splash/macbook-left.png" class="macbook">
+                </div>
+                <div class="col-md-5 col-lg-5">
+                    <h3 class="tour-title">Templates</h3>
+
+                    <p class="tour-text">Stormboard models your existing business processes using templates. Templates
+                        are
+                        great for capturing, organizing, prioritizing and reporting on your processes. We have a library
+                        of
+                        great templates and can customize both the templates and reports to your specifications.</p>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron mobile" id="mobile">
+            <div class="container spy">
+                <div class="row">
+                    <div class="col-md-5 col-lg-5">
+                        <h3 class="tour-title">Mobile</h3>
+
+                        <p class="tour-text">When using Stormboard on your phone, your ideas are shown in a list view.
+                            This
+                            makes it super easy to add and search for ideas. It updates in real-time so no matter who is
+                            adding ideas on their device, you’ll see it happen instantly.<br><br>
+                            When you turn your phone horizontally, the Stormboard interface changes to the spatial view
+                            of
+                            Stormboard to make it easy to move ideas where you want.<br><br>
+                            When someone updates a storm you’ll get a push notification on your phone making it quick
+                            for
+                            you to respond and keep the discussion flowing.
+                        </p>
+
+                        <p class="app-store-links">
+                            <a href="https://itunes.apple.com/us/app/stormboard/id1029518273?ls=1&amp;mt=8"
+                               target="_blank"><img
+                                    src="{{ STATIC_URL }}stormboard/images/apple/appstore.svg"></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.stormboard.mobile"
+                               target="_blank"><img src="{{ STATIC_URL }}stormboard/images/google/play.png"></a>
+                        </p>
+
+                    </div>
+                    <div class="col-md-7 col-lg-7 hidden-sm hidden-xs img text-right">
+                        <img src="{{ STATIC_URL }}stormboard/images/splash/iphone.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-lg-7 hidden-sm hidden-xs img">
+                    <img src="{{ STATIC_URL }}stormboard/images/splash/macbook-left.png" class="macbook">
+                </div>
+                <div class="col-md-5 col-lg-5">
+                    <h3 class="tour-title">Security</h3>
+
+                    <p class="tour-text">Everything in Stormboard are transmitted over a SSL encrypted connection so no
+                        one
+                        can intercept your ideas. Enterprise users may even opt for client side encryption for an
+                        unprecedented level of security. Bottom line, your ideas are safe on Stormboard.</p>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron surfacehub" id="surfacehub">
+            <div class="container spy">
+                <div class="row">
+                    <div class="col-md-5 col-lg-5">
+                        <h3 class="tour-title">Microsoft Surface Hub</h3>
+
+                        <p class="tour-text">
+                            Stormboard for Surface Hub lets you use Stormboard on a massive 55” or 84” Surface Hub
+                            touchscreen. Write on sticky notes with one of two pens that come with the Surface Hub and
+                            in
+                            realtime it converts to text.<br><br>
+                            Stormboard on a 55” or 84” touchscreen lets you take advantage of the front of the room
+                            whiteboard experience.
+                        </p>
+
+                        <p class="app-store-links">
+                            <a href="https://www.microsoft.com/store/apps/9nblggh64756" target="_blank"><img
+                                    src="{{ STATIC_URL }}stormboard/images/ms/store.svg"></a>
+                        </p>
+                    </div>
+                    <div class="col-md-7 col-lg-7 hidden-sm hidden-xs img text-right">
+                        <img src="{{ STATIC_URL }}stormboard/images/splash/surfacehub.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="tour-title text-center">Idea Types</h3>
+
+                    <div class="row idea-types clearfix">
+                        <div class="col-xs-4 col-sm-2">
+                            <span class="icon-sticky"></span>
+
+                            <p>Text</p>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <span class="icon-sketch"></span>
+
+                            <p>Sketch</p>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <span class="icon-camera"></span>
+
+                            <p>Image</p>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <span class="icon-video"></span>
+
+                            <p>Video</p>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <span class="icon-indexcard"></span>
+
+                            <p>Index Card</p>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <span class="icon-file"></span>
+
+                            <p>File</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="signup frm-signup">
+                <h1 class="text-center">Sign Up Now!</h1>
+
+                <div class="row">
+                    <div class="col-sm-offset-2 col-md-offset-3 col-sm-8 col-md-6">
+                        <span class="label label-danger email-signup-error"></span>
+                        <input type="hidden" class="email-signup-k" value="k4usld8l6l"/>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control email-signup" placeholder="Email Address">
+          <span class="input-group-btn">
+            <button class="btn btn-primary btn-email-signup" type="button">Sign Up</button>
+          </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-offset-2 col-md-offset-3 col-sm-8 col-md-6">
+                        <div class="goog">
+                            <span class="or" style="background-color:#fff">Or sign up with...</span>
+                            <hr>
+                            <div class="auth-providers full-width">
+                                <button class="btn auth-google" type="button"
+                                        onclick="window.open('https://accounts.google.com/o/oauth2/auth?client_id=199728975437-gp4joa5arf20dql31cpjucob3dtkpm9e.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DGoogle&amp;response_type=code&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.profile.emails.read+https%3A%2F%2Fwww.google.com%2Fm8%2Ffeeds+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&amp;access_type=offline','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                                    <span class="icon-google"></span> <span class="visible-md visible-lg">Google</span>
+                                </button>
+                                <button class="btn auth-live" type="button"
+                                        onclick="window.open('https://login.live.com/oauth20_authorize.srf?client_id=000000004014B706&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DLive&amp;response_type=code&amp;scope=wl.basic+wl.contacts_emails+wl.emails+wl.signin+wl.offline_access+wl.skydrive','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                                    <img src="{{ STATIC_URL }}stormboard/images/ms/windows-logo.gif" width="16"> <span
+                                        class="hidden-xs hidden-sm">Live</span></button>
+                                <button class="btn auth-linkedin" type="button"
+                                        onclick="window.open('https://www.linkedin.com/uas/oauth/authenticate?oauth_token=77--7d4f69b6-f397-45d6-b74e-7177368d4e5c','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                                    <img src="{{ STATIC_URL }}stormboard/images/apps/linkedin-icon-32.png" width="16"> <span
+                                        class="hidden-xs hidden-sm">LinkedIn</span></button>
+                                <button class="btn auth-facebook" type="button"
+                                        onclick="window.location='https://www.facebook.com/dialog/oauth?client_id=10150136297165503&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DFacebook&amp;state=3cb2f4354b244dfb4df7754269dc685a&amp;sdk=php-sdk-3.2.3&amp;scope=public_profile%2C+user_friends%2C+email&amp;display=page'">
+                                    <img src="{{ STATIC_URL }}stormboard/images/apps/facebook-icon-32.png" width="16"> <span
+                                        class="hidden-xs hidden-sm">Facebook</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container site-container"></div>
+{% endblock %}
+

@@ -1,0 +1,57 @@
+{% extends 'stormboard/layout.html' %}
+{% load i18n %}
+
+{% block body %}
+    <main>
+
+        <aside id="page-header" class="tall">
+            <div class="row">
+                <h1>Register</h1>
+                <h5>Enter your email address below or sign in with one of your accounts</h5>
+            </div>
+        </aside>
+
+        <section class="content">
+            <div class="row col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 well frm-signup" style="margin-top:50px;">
+                <div class="quick-signup">
+                    <span class="label label-danger email-signup-error"></span>
+                    <input type="hidden" class="email-signup-k" value="k4usld8l6l"/>
+
+                    <div class="input-group">
+                        <input type="text" class="form-control email-signup" placeholder="Email Address">
+        <span class="input-group-btn">
+          <button class="btn btn-primary btn-email-signup" type="button">Sign Up</button>
+        </span>
+                    </div>
+                </div>
+
+                <div class="goog">
+                    <span class="or" style="background-color:#f5f5f5">Or sign up with...</span>
+                    <hr>
+                    <div class="auth-providers full-width">
+                        <button class="btn auth-google" type="button"
+                                onclick="window.open('https://accounts.google.com/o/oauth2/auth?client_id=199728975437-gp4joa5arf20dql31cpjucob3dtkpm9e.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DGoogle&amp;response_type=code&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.profile.emails.read+https%3A%2F%2Fwww.google.com%2Fm8%2Ffeeds+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&amp;access_type=offline','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                            <span class="icon-google"></span> <span class="hidden-xs">Google</span></button>
+                        <button class="btn auth-live" type="button"
+                                onclick="window.open('auth/indexec87.html','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                            <img src="{{ STATIC_URL }}stormboard/images/ms/windows-logo.gif" width="16"> <span
+                                class="hidden-xs">Live</span>
+                        </button>
+                        <button class="btn auth-linkedin" type="button"
+                                onclick="window.open('https://www.linkedin.com/uas/oauth/authenticate?oauth_token=77--8053cb64-73dd-4a5b-bd9a-4fcf98e27564','popUpWindow'+new Date().getTime(),'width=800,height=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
+                            <img src="{{ STATIC_URL }}stormboard/images/apps/linkedin-icon-32.png" width="16"> <span
+                                class="hidden-xs">LinkedIn</span>
+                        </button>
+                        <button class="btn auth-facebook" type="button"
+                                onclick="window.location='https://www.facebook.com/dialog/oauth?client_id=10150136297165503&amp;redirect_uri=https%3A%2F%2Fwww.stormboard.com%2Fauth%2Findex%3Fhauth.done%3DFacebook&amp;state=4d10da6636f18a4c3f66caab9bf66586&amp;sdk=php-sdk-3.2.3&amp;scope=public_profile%2C+user_friends%2C+email&amp;display=page'">
+                            <img src="{{ STATIC_URL }}stormboard/images/apps/facebook-icon-32.png" width="16"> <span
+                                class="hidden-xs">Facebook</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block footer %}{% endblock %}
